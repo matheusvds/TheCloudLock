@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11654EC5B530482DF630A81E /* Pods_TheCloudLockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAA912C5DB61791C06A29B6 /* Pods_TheCloudLockTests.framework */; };
 		2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */; };
 		2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */; };
 		2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E77361F384BFC006C84D4 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 		2ABEE6D41F38856A00531205 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ABEE6D31F38828A00531205 /* Configuration.plist */; };
 		2ABEE6D61F3886D700531205 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABEE6D51F3886D700531205 /* RootRouter.swift */; };
 		553FC23C214047CB001D9362 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FC23B214047CB001D9362 /* R.generated.swift */; };
+		BC3EC2A0B7E0679DBD846100 /* Pods_TheCloudLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */; };
 		C90395241FC622D2006F1DC0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395231FC622D2006F1DC0 /* main.swift */; };
 		C90395261FC62399006F1DC0 /* TestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */; };
 		C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */; };
@@ -28,19 +30,20 @@
 			containerPortal = 2A1E772B1F384BFC006C84D4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2A1E77321F384BFC006C84D4;
-			remoteInfo = "TheCloudLock";
+			remoteInfo = TheCloudLock;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheCloudLock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
 		2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
-		2A1E77331F384BFC006C84D4 /* TheCloudLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheCloudLock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1E77331F384BFC006C84D4 /* TheCloudLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCloudLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1E77361F384BFC006C84D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A1E773D1F384BFD006C84D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A1E77401F384BFD006C84D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A1E77421F384BFD006C84D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A1E77471F384BFD006C84D4 /* TheCloudLockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TheCloudLockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1E77471F384BFD006C84D4 /* TheCloudLockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheCloudLockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1E774D1F384BFD006C84D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9222811F38797600A648E6 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		2A9222841F387B1D00A648E6 /* TheCloudLockTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheCloudLockTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -48,8 +51,15 @@
 		2ABEE6D51F3886D700531205 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		553FC23B214047CB001D9362 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55F50BE321404BDD00FAC039 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.release.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.release.xcconfig"; sourceTree = "<group>"; };
+		5AAA912C5DB61791C06A29B6 /* Pods_TheCloudLockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheCloudLockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DB01ED95907AC7A045DE05 /* Pods-TheCloudLockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLockTests.debug.xcconfig"; path = "Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		992723821A2F6E6486A4CEFD /* Pods-TheCloudLockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLockTests.release.xcconfig"; path = "Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF4C378618A73FF033C72E2B /* Pods-TheCloudLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.debug.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.debug.xcconfig"; sourceTree = "<group>"; };
 		C90395231FC622D2006F1DC0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAppDelegate.swift; sourceTree = "<group>"; };
+		D800E0E1834929157785B2A1 /* Pods-TheCloudLock.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.staging.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.staging.xcconfig"; sourceTree = "<group>"; };
+		E1F4CE0AF1497ED9F026ECA1 /* Pods-TheCloudLockTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLockTests.staging.xcconfig"; path = "Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests.staging.xcconfig"; sourceTree = "<group>"; };
 		FCB2C7CA1F57127800481080 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3EC2A0B7E0679DBD846100 /* Pods_TheCloudLock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11654EC5B530482DF630A81E /* Pods_TheCloudLockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +98,8 @@
 				2A1E77351F384BFC006C84D4 /* TheCloudLock */,
 				2A1E774A1F384BFD006C84D4 /* TheCloudLockTests */,
 				2A1E77341F384BFC006C84D4 /* Products */,
+				96CEDB5741B70329AED13E31 /* Pods */,
+				3DAE3D4A5C84DAF4F1EF7AD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +123,7 @@
 				2AB31D9F1F38741400B7D1F3 /* Modules */,
 				2AFB310A1F385A20009C4586 /* Helpers */,
 			);
-			path = "TheCloudLock";
+			path = TheCloudLock;
 			sourceTree = "<group>";
 		};
 		2A1E774A1F384BFD006C84D4 /* TheCloudLockTests */ = {
@@ -119,7 +133,7 @@
 				2A1E774D1F384BFD006C84D4 /* Info.plist */,
 				C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */,
 			);
-			path = "TheCloudLockTests";
+			path = TheCloudLockTests;
 			sourceTree = "<group>";
 		};
 		2AB31D9E1F38740A00B7D1F3 /* Models */ = {
@@ -215,12 +229,35 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		3DAE3D4A5C84DAF4F1EF7AD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */,
+				5AAA912C5DB61791C06A29B6 /* Pods_TheCloudLockTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		553FC239214046D0001D9362 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
 				553FC23B214047CB001D9362 /* R.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		96CEDB5741B70329AED13E31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C378618A73FF033C72E2B /* Pods-TheCloudLock.debug.xcconfig */,
+				D800E0E1834929157785B2A1 /* Pods-TheCloudLock.staging.xcconfig */,
+				582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */,
+				78DB01ED95907AC7A045DE05 /* Pods-TheCloudLockTests.debug.xcconfig */,
+				E1F4CE0AF1497ED9F026ECA1 /* Pods-TheCloudLockTests.staging.xcconfig */,
+				992723821A2F6E6486A4CEFD /* Pods-TheCloudLockTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,18 +267,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A1E77501F384BFD006C84D4 /* Build configuration list for PBXNativeTarget "TheCloudLock" */;
 			buildPhases = (
+				9E958A48BFD3C791B1BD7E48 /* [CP] Check Pods Manifest.lock */,
 				553FC23A2140470C001D9362 /* R.swift */,
 				2A1E772F1F384BFC006C84D4 /* Sources */,
 				FC9CA61F1F83C1B700B8EB94 /* SwiftLint */,
 				2A1E77301F384BFC006C84D4 /* Frameworks */,
 				2A1E77311F384BFC006C84D4 /* Resources */,
+				A4DC89234697C9E0DDA2FABD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "TheCloudLock";
-			productName = "TheCloudLock";
+			name = TheCloudLock;
+			productName = TheCloudLock;
 			productReference = 2A1E77331F384BFC006C84D4 /* TheCloudLock.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -249,6 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A1E77531F384BFD006C84D4 /* Build configuration list for PBXNativeTarget "TheCloudLockTests" */;
 			buildPhases = (
+				EF8524DAF0330D69AECDEA89 /* [CP] Check Pods Manifest.lock */,
 				2A1E77431F384BFD006C84D4 /* Sources */,
 				2A1E77441F384BFD006C84D4 /* Frameworks */,
 				2A1E77451F384BFD006C84D4 /* Resources */,
@@ -258,8 +298,8 @@
 			dependencies = (
 				2A1E77491F384BFD006C84D4 /* PBXTargetDependency */,
 			);
-			name = "TheCloudLockTests";
-			productName = "TheCloudLockTests";
+			name = TheCloudLockTests;
+			productName = TheCloudLockTests;
 			productReference = 2A1E77471F384BFD006C84D4 /* TheCloudLockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -271,7 +311,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "AppCompany";
+				ORGANIZATIONNAME = AppCompany;
 				TargetAttributes = {
 					2A1E77321F384BFC006C84D4 = {
 						CreatedOnToolsVersion = 9.0;
@@ -339,6 +379,72 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TheCloudLock/Resources/Generated/R.generated.swift\"\n";
+		};
+		9E958A48BFD3C791B1BD7E48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheCloudLock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4DC89234697C9E0DDA2FABD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8524DAF0330D69AECDEA89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheCloudLockTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FC9CA61F1F83C1B700B8EB94 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -517,9 +623,10 @@
 		};
 		2A1E77511F384BFD006C84D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF4C378618A73FF033C72E2B /* Pods-TheCloudLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "TheCloudLock/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xfrontend -warn-long-expression-type-checking=500";
@@ -532,9 +639,10 @@
 		};
 		2A1E77521F384BFD006C84D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "TheCloudLock/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -547,11 +655,12 @@
 		};
 		2A1E77541F384BFD006C84D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78DB01ED95907AC7A045DE05 /* Pods-TheCloudLockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "TheCloudLockTests/Info.plist";
+				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,11 +674,12 @@
 		};
 		2A1E77551F384BFD006C84D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 992723821A2F6E6486A4CEFD /* Pods-TheCloudLockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "TheCloudLockTests/Info.plist";
+				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,9 +752,10 @@
 		};
 		2ABEE6D01F387C5D00531205 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D800E0E1834929157785B2A1 /* Pods-TheCloudLock.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "TheCloudLock/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -657,11 +768,12 @@
 		};
 		2ABEE6D11F387C5D00531205 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1F4CE0AF1497ED9F026ECA1 /* Pods-TheCloudLockTests.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "TheCloudLockTests/Info.plist";
+				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
