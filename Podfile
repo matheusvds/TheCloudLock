@@ -11,6 +11,7 @@ target 'TheCloudLock' do
 
   pod 'R.swift', '5.0.0'
   pod 'SwiftLint', '0.31.0'
+  pod 'SnapKit'
 
   target 'TheCloudLockTests' do
     inherit! :search_paths

@@ -27,16 +27,17 @@ class RootRouter {
     func loadMainAppStructure() {
         // Customize your app structure here
         let tabController = BaseTabbarController()
-        tabController.setViewControllers(instanceNavigationControllers(), animated: false)
+        tabController.setViewControllers(instanceNavigationControllers(), animated: true)
         setRootViewController(controller: tabController, animatedWithOptions: nil)
     }
     
     private func instanceNavigationControllers() -> [UINavigationController] {
-        return [instanceUnlockNavigation()]
+        return [instanceUnlockNavigation(), instanceUnlockNavigation(), instanceUnlockNavigation()]
     }
     
     private func instanceUnlockNavigation() -> UINavigationController {
-        let unlockVC = UIViewController()
+        let unlockVC = UnlockController()
+        unlockVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         return BaseNavigationController(rootViewController: unlockVC)
     }
 }
