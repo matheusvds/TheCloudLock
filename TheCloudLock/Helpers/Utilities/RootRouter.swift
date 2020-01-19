@@ -26,8 +26,17 @@ class RootRouter {
 
     func loadMainAppStructure() {
         // Customize your app structure here
-        let controller = UIViewController()
-        controller.view.backgroundColor = UIColor.red
-        setRootViewController(controller: controller, animatedWithOptions: nil)
+        let tabController = BaseTabbarController()
+        tabController.setViewControllers(instanceNavigationControllers(), animated: false)
+        setRootViewController(controller: tabController, animatedWithOptions: nil)
+    }
+    
+    private func instanceNavigationControllers() -> [UINavigationController] {
+        return [instanceUnlockNavigation()]
+    }
+    
+    private func instanceUnlockNavigation() -> UINavigationController {
+        let unlockVC = UIViewController()
+        return BaseNavigationController(rootViewController: unlockVC)
     }
 }

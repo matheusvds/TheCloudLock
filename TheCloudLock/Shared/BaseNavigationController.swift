@@ -1,0 +1,21 @@
+//
+//  MainNavigationController.swift
+//  TheCloudLock
+//
+//  Created by Matheus Vasconcelos on 18/01/20.
+//  Copyright © 2020 AppCompany. All rights reserved.
+//
+
+import UIKit
+
+class BaseNavigationController: UINavigationController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configNavigationBar()
+    }
+    private func configNavigationBar() {
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+    }
+}
