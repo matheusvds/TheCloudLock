@@ -14,8 +14,6 @@ class BaseNavigationController: UINavigationController {
         configNavigationBar()
     }
     private func configNavigationBar() {
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        navigationBar.prefersLargeTitles = true
     }
 }
