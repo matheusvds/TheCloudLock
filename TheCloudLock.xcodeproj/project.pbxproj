@@ -28,6 +28,10 @@
 		2F24827123D3F3CB0043F5EE /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827023D3F3CB0043F5EE /* ViewCode.swift */; };
 		2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827223D3F4EC0043F5EE /* BaseView.swift */; };
 		2F24827623D4A3100043F5EE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827523D4A3100043F5EE /* BaseViewController.swift */; };
+		2F24827E23D518810043F5EE /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827D23D518810043F5EE /* DoorView.swift */; };
+		2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */; };
+		2F24828223D518E50043F5EE /* UnlockViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828123D518E50043F5EE /* UnlockViewFactory.swift */; };
+		2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828323D52C8D0043F5EE /* UIColor+.swift */; };
 		553FC23C214047CB001D9362 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FC23B214047CB001D9362 /* R.generated.swift */; };
 		BC3EC2A0B7E0679DBD846100 /* Pods_TheCloudLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */; };
 		C90395241FC622D2006F1DC0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395231FC622D2006F1DC0 /* main.swift */; };
@@ -74,6 +78,10 @@
 		2F24827223D3F4EC0043F5EE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2F24827423D4A06F0043F5EE /* UnlockScene.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UnlockScene.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2F24827523D4A3100043F5EE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2F24827D23D518810043F5EE /* DoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
+		2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUnlockView.swift; sourceTree = "<group>"; };
+		2F24828123D518E50043F5EE /* UnlockViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewFactory.swift; sourceTree = "<group>"; };
+		2F24828323D52C8D0043F5EE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		553FC23B214047CB001D9362 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55F50BE321404BDD00FAC039 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.release.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 		2AB31DA41F38745300B7D1F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2F24828323D52C8D0043F5EE /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,10 +278,21 @@
 				2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */,
 				2F24826223D3DD4A0043F5EE /* UnlockModels.swift */,
 				2F24826323D3DD4A0043F5EE /* UnlockController.swift */,
-				2F24826E23D3E15A0043F5EE /* UnlockView.swift */,
 				2F24826423D3DD4A0043F5EE /* UnlockInteractor.swift */,
+				2F24827C23D518660043F5EE /* UnlockView */,
 			);
 			path = Unlock;
+			sourceTree = "<group>";
+		};
+		2F24827C23D518660043F5EE /* UnlockView */ = {
+			isa = PBXGroup;
+			children = (
+				2F24828123D518E50043F5EE /* UnlockViewFactory.swift */,
+				2F24826E23D3E15A0043F5EE /* UnlockView.swift */,
+				2F24827D23D518810043F5EE /* DoorView.swift */,
+				2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */,
+			);
+			path = UnlockView;
 			sourceTree = "<group>";
 		};
 		3DAE3D4A5C84DAF4F1EF7AD3 /* Frameworks */ = {
@@ -522,16 +542,20 @@
 				2F24827623D4A3100043F5EE /* BaseViewController.swift in Sources */,
 				C90395241FC622D2006F1DC0 /* main.swift in Sources */,
 				2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */,
+				2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */,
+				2F24828223D518E50043F5EE /* UnlockViewFactory.swift in Sources */,
 				2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */,
 				2F24826F23D3E15A0043F5EE /* UnlockView.swift in Sources */,
 				553FC23C214047CB001D9362 /* R.generated.swift in Sources */,
 				2F24826A23D3DD4A0043F5EE /* UnlockInteractor.swift in Sources */,
+				2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
 				2F24826723D3DD4A0043F5EE /* UnlockRouter.swift in Sources */,
 				2F24827123D3F3CB0043F5EE /* ViewCode.swift in Sources */,
 				2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */,
 				2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */,
 				2F24826923D3DD4A0043F5EE /* UnlockController.swift in Sources */,
+				2F24827E23D518810043F5EE /* DoorView.swift in Sources */,
 				2F24826623D3DD4A0043F5EE /* UnlockWorker.swift in Sources */,
 				2F24826823D3DD4A0043F5EE /* UnlockModels.swift in Sources */,
 			);
@@ -686,7 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xfrontend -warn-long-expression-type-checking=500";
 				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
@@ -702,7 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
@@ -815,7 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheCloudLock/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = your.bundle.id;
