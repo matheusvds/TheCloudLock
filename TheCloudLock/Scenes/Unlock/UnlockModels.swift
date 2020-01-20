@@ -13,11 +13,25 @@
 import UIKit
 
 enum Unlock {
-  // MARK: Use cases
-  enum Something {
-    struct Request {}
-    struct Response {}
-    struct ViewModel {}
-  }
+    // MARK: Use cases
+    enum FetchDoors {
+        struct Request {}
+        struct Response: Codable {
+            let doorID: Int?
+            let name: String?
+            let image: String?
+        }
+        struct ViewModel {
+            let state: State
+            let doorImage: UIImage?
+            let doorName: String
+        }
+    }
     
+    enum State {
+        case loading
+        case error
+        case initialSuccess
+        case success
+    }
 }

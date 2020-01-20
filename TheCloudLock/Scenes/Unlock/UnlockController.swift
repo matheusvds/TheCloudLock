@@ -13,21 +13,28 @@
 import UIKit
 
 protocol UnlockDisplayLogic: class {
-    func displaySomething(viewModel: Unlock.Something.ViewModel)
+    func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel)
 }
 
 class UnlockController: Controller {
+    
+    // MARK: VIP Cycle
+    
     var interactor: UnlockBusinessLogic?
     var router: (NSObjectProtocol & UnlockRoutingLogic & UnlockDataPassing)?
+    
+    // MARK: Views
+    
+    private var unlockView: UnlockView = UnlockView(frame: UIScreen.main.bounds)
+    
+    // MARK: Flow Control
+    
+    private var viewState: Unlock.State = .loading
     
     // MARK: View lifecycle
 
     override func loadView() {
-        self.view = UnlockView(frame: UIScreen.main.bounds)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        self.view = unlockView
     }
     
     // MARK: Setup
@@ -46,31 +53,31 @@ class UnlockController: Controller {
     }
         
     override func start() {
-        doSomething()
+        setTitle()
+        fetchDoors()
     }
     
-    // MARK: Routing
-    
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //    if let scene = segue.identifier {
-    //      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-    //      if let router = router, router.responds(to: selector) {
-    //        router.perform(selector, with: segue)
-    //      }
-    //    }
-    //  }
-    
     // MARK: Helper Methods
-    func doSomething() {
-        let request = Unlock.Something.Request()
-        interactor?.doSomething(request: request)
+    
+    private func fetchDoors() {
+        startLoading()
+        let request = Unlock.FetchDoors.Request()
+        interactor?.handleFetchDoors(request: request)
+    }
+    
+    private func setTitle() {
+        title = "Unlock"
+    }
+    
+    private func startLoading() {
+        setLoadingState(view: &unlockView)
     }
 }
 
 // MARK: UnlockDisplayLogic
 
-extension UnlockController: UnlockDisplayLogic {
-    func displaySomething(viewModel: Unlock.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+extension UnlockController: UnlockDisplayLogic, UnlockViewFactory {
+    func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel) {
+        set(view: &unlockView, with: viewModel)
     }
 }

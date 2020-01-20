@@ -12,7 +12,19 @@
 
 import UIKit
 
+enum UnlockError: Error {
+    case notFound
+    case notAuthorized
+}
+
 class UnlockWorker {
-  func doSomeWork() {
-  }
+    
+    func findDoors(request: Unlock.FetchDoors.Request,
+                   completion: @escaping (Result<Unlock.FetchDoors.Response, UnlockError>) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(.success(Unlock.FetchDoors.Response(doorID: 1,
+                                                           name: "Main entrance",
+                                                           image: "livingroom")))
+        }
+    }
 }

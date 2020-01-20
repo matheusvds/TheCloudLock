@@ -13,16 +13,58 @@
 import UIKit
 
 protocol UnlockPresentationLogic {
-  func presentSomething(response: Unlock.Something.Response)
+    func presentFetchDoors(response: Unlock.FetchDoors.Response)
+    func presentFetchDoors(error: UnlockError)
 }
 
 class UnlockPresenter: UnlockPresentationLogic {
-  weak var viewController: UnlockDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Unlock.Something.Response) {
-    let viewModel = Unlock.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    
+    weak var viewController: UnlockDisplayLogic?
+    
+    // MARK: UnlockPresentationLogic
+    
+    func presentFetchDoors(response: Unlock.FetchDoors.Response) {
+        let viewModel = convert(response: response)
+        viewController?.displayFetchDoors(viewModel: viewModel)
+    }
+    
+    func presentFetchDoors(error: UnlockError) {
+        let viewModel = convertError(error: error)
+        viewController?.displayFetchDoors(viewModel: viewModel)
+
+    }
+    
+    // MARK: Helper Methods
+    
+    func convert(response: Unlock.FetchDoors.Response) -> Unlock.FetchDoors.ViewModel {
+        
+        return Unlock.FetchDoors.ViewModel(state: .initialSuccess,
+                                            doorImage: getImage(from: response),
+                                            doorName: response.name ?? String())
+    }
+    
+    func convertError(error: UnlockError) -> Unlock.FetchDoors.ViewModel {
+        return Unlock.FetchDoors.ViewModel(state: .initialSuccess,
+                                            doorImage: UIImage(),
+                                            doorName: String())
+    }
+    
+    private func getImage(from response: Unlock.FetchDoors.Response) -> UIImage? {
+        
+        guard let image = response.image else {
+            return nil
+        }
+        
+        switch image {
+        case "hallway":
+            return R.image.hallway()
+        case "office":
+            return R.image.office()
+        case "livingroom":
+            return R.image.livingroom()
+        
+        default:
+            return nil
+        }
+    }
 }

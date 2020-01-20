@@ -13,25 +13,32 @@
 import UIKit
 
 protocol UnlockBusinessLogic {
-    func doSomething(request: Unlock.Something.Request)
+    func handleFetchDoors(request: Unlock.FetchDoors.Request)
 }
 
-protocol UnlockDataStore {
-    //var name: String { get set }
-}
+protocol UnlockDataStore {}
 
-class UnlockInteractor: UnlockBusinessLogic, UnlockDataStore {
+class UnlockInteractor: UnlockDataStore {
     var presenter: UnlockPresentationLogic?
     var worker: UnlockWorker?
-    //var name: String = ""
     
-    // MARK: Do something
+}
+
+// MARK: UnlockBusinessLogic
+
+extension UnlockInteractor: UnlockBusinessLogic {
     
-    func doSomething(request: Unlock.Something.Request) {
+    func handleFetchDoors(request: Unlock.FetchDoors.Request) {
         worker = UnlockWorker()
-        worker?.doSomeWork()
         
-        let response = Unlock.Something.Response()
-        presenter?.presentSomething(response: response)
+        worker?.findDoors(request: request, completion: { result in
+            switch result {
+            case .success(let data):
+                self.presenter?.presentFetchDoors(response: data)
+            case .failure(let error):
+                self.presenter?.presentFetchDoors(error: error)
+            }
+        })
+    
     }
 }
