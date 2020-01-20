@@ -18,7 +18,19 @@ target 'TheCloudLock' do
   end
 end
 
+
+## MARK: - Post Install Script
+
 post_install do |installer|
+  
+  ## Project
+  
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED'] = "YES"
+  end
+    
+  ## Targets
+  
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
