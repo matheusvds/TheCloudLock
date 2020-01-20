@@ -12,7 +12,7 @@ class RootRouter {
     /** Replaces root view controller. You can specify the replacment animation type.
      If no animation type is specified, there is no animation */
     func setRootViewController(controller: UIViewController, animatedWithOptions: UIView.AnimationOptions?) {
-        guard let window = UIApplication.shared.keyWindow else {
+        guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
             fatalError("No window in app")
         }
         if let animationOptions = animatedWithOptions, window.rootViewController != nil {
