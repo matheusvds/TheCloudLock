@@ -1,3 +1,4 @@
+## MARK: - Configuration
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
@@ -7,15 +8,37 @@ use_frameworks!
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
-target 'TheCloudLock' do
+## MARK: - Functions
 
+def utilityPods
   pod 'R.swift', '5.0.0'
   pod 'SwiftLint', '0.31.0'
+end
+
+def uiPods
   pod 'SnapKit'
+end
+
+def testingPods
+  pod 'Quick'
+  pod 'Nimble'
+  pod 'Nimble-Snapshots'
+end
+
+## MARK: - Targets
+
+target 'TheCloudLock' do
+  
+  utilityPods
+  uiPods
 
   target 'TheCloudLockTests' do
-    inherit! :search_paths
+   inherit! :search_paths
+   
+    testingPods
+    
   end
+  
 end
 
 
