@@ -769,7 +769,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78DB01ED95907AC7A045DE05 /* Pods-TheCloudLockTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
@@ -788,7 +788,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 992723821A2F6E6486A4CEFD /* Pods-TheCloudLockTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
@@ -882,7 +882,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1F4CE0AF1497ED9F026ECA1 /* Pods-TheCloudLockTests.staging.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TheCloudLockTests/Info.plist;
