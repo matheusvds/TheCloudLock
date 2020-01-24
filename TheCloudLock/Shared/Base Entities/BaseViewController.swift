@@ -13,7 +13,7 @@ protocol BaseViewController {
     func start()
 }
 
-class Controller: UIViewController, BaseViewController {
+class Controller: UIViewController, BaseViewController, Identifiable {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,6 +23,7 @@ class Controller: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
+        setTitle()
     }
     
     required init?(coder: NSCoder) {
@@ -32,4 +33,11 @@ class Controller: UIViewController, BaseViewController {
     func setup() {}
     
     func start() {}
+    
+    func setTitle() {
+        var title = Self.identifier
+        title = title.replacingOccurrences(of: "View", with: "")
+        title = title.replacingOccurrences(of: "Controller", with: "")
+        self.title = title
+    }
 }

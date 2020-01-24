@@ -13,32 +13,63 @@
 import UIKit
 
 protocol UnlockBusinessLogic {
-    func handleFetchDoors(request: Unlock.FetchDoors.Request)
+    func fetchDoors(request: Unlock.FetchDoors.Request)
+    func unlockDoor(request: Unlock.UnlockDoor.Request)
 }
 
-protocol UnlockDataStore {}
+protocol UnlockDataStore {
+    var foundDoors: [Door]? { get }
+}
 
 class UnlockInteractor: UnlockDataStore {
     var presenter: UnlockPresentationLogic?
     var worker: UnlockWorker?
-    
+    var foundDoors: [Door]?
 }
 
 // MARK: UnlockBusinessLogic
 
 extension UnlockInteractor: UnlockBusinessLogic {
-    
-    func handleFetchDoors(request: Unlock.FetchDoors.Request) {
-        worker = UnlockWorker()
-        
-        worker?.findDoors(request: request, completion: { result in
+
+    func fetchDoors(request: Unlock.FetchDoors.Request) {
+        worker = worker ?? UnlockWorker(cloudLock: CloudLockAPI())
+        worker?.fetchDoors(completion: { result in
+            
             switch result {
             case .success(let data):
-                self.presenter?.presentFetchDoors(response: data)
+                let doors = data.map({ Door(doorID: $0.doorID,
+                                            name: $0.name,
+                                            image: $0.image) })
+                self.foundDoors = doors
+                let response = Unlock.FetchDoors.Response(doors: doors, error: nil)
+                self.presenter?.presentFetchDoors(response: response)
+                
             case .failure(let error):
-                self.presenter?.presentFetchDoors(error: error)
+                let response = Unlock.FetchDoors.Response(doors: nil, error: error)
+                self.presenter?.presentFetchDoors(response: response)
             }
         })
+    }
     
+    func unlockDoor(request: Unlock.UnlockDoor.Request) {
+        guard let doorID = foundDoors?.first?.doorID else {
+            let response = Unlock.UnlockDoor.Response(error: .cannotUnlock)
+            self.presenter?.presentUnlockDoor(response: response)
+            return
+        }
+        
+        worker = worker ?? UnlockWorker(cloudLock: CloudLockAPI())
+        worker?.unlockDoor(doorID: doorID, completion: { result in
+            
+            switch result {
+            case .success:
+                let response = Unlock.UnlockDoor.Response(error: nil)
+                self.presenter?.presentUnlockDoor(response: response)
+                
+            case .failure(let error):
+                let response = Unlock.UnlockDoor.Response(error: error)
+                self.presenter?.presentUnlockDoor(response: response)
+            }
+        })
     }
 }

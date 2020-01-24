@@ -33,6 +33,9 @@ class DoorView: View {
         button.setTitleColor(.darkPurple, for: .highlighted)
         button.backgroundColor = .lightPurple
         button.layer.cornerRadius = 18
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.3
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()

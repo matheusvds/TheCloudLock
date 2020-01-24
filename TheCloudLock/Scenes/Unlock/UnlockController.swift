@@ -14,6 +14,7 @@ import UIKit
 
 protocol UnlockDisplayLogic: class {
     func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel)
+    func displayUnlockDoor(viewModel: Unlock.UnlockDoor.ViewModel)
 }
 
 class UnlockController: Controller {
@@ -22,19 +23,16 @@ class UnlockController: Controller {
     
     var interactor: UnlockBusinessLogic?
     var router: (NSObjectProtocol & UnlockRoutingLogic & UnlockDataPassing)?
-    
-    // MARK: Views
-    
-    private var unlockView: UnlockView = UnlockView(frame: UIScreen.main.bounds)
+    var viewLogic: (UnlockViewStateLogic & UnlockViewEventsLogic)?
     
     // MARK: Flow Control
     
-    private var viewState: Unlock.State = .loading
+    private var viewState: Unlock.State = .loading(nil)
     
     // MARK: View lifecycle
 
     override func loadView() {
-        self.view = unlockView
+        self.view = viewLogic
     }
     
     // MARK: Setup
@@ -44,6 +42,9 @@ class UnlockController: Controller {
         let interactor = UnlockInteractor()
         let presenter = UnlockPresenter()
         let router = UnlockRouter()
+        let viewLogic = UnlockView(frame: UIScreen.main.bounds)
+        
+        viewController.viewLogic = viewLogic
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -53,31 +54,62 @@ class UnlockController: Controller {
     }
         
     override func start() {
-        setTitle()
+        setupEventTargets()
         fetchDoors()
     }
     
     // MARK: Helper Methods
     
     private func fetchDoors() {
-        startLoading()
+        startLoading(with: "Searching nearest door")
         let request = Unlock.FetchDoors.Request()
-        interactor?.handleFetchDoors(request: request)
+        interactor?.fetchDoors(request: request)
     }
     
-    private func setTitle() {
-        title = "Unlock"
+    private func unlockDoor() {
+        startLoading(with: "Unlocking...")
+        let request = Unlock.UnlockDoor.Request()
+        interactor?.unlockDoor(request: request)
     }
     
-    private func startLoading() {
-        setLoadingState(view: &unlockView)
+    private func startLoading(with message: String? = nil) {
+        viewLogic?.set(state: .loading(message))
     }
+    
+    private func setupEventTargets() {
+        viewLogic?.unlockButton.addTarget(self, action: #selector(unlockButtonTapped), for: .touchUpInside)
+        viewLogic?.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    }
+    
+    deinit {
+        viewLogic?.unlockButton.removeTarget(self, action: #selector(unlockButtonTapped), for: .touchUpInside)
+        viewLogic?.backButton.removeTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    }
+    
+    // MARK: UI Events
+    
+    @objc
+    private func unlockButtonTapped() {
+        unlockDoor()
+    }
+    
+    @objc
+    private func backButtonTapped() {
+        fetchDoors()
+    }
+    
 }
 
 // MARK: UnlockDisplayLogic
 
-extension UnlockController: UnlockDisplayLogic, UnlockViewFactory {
+extension UnlockController: UnlockDisplayLogic {
     func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel) {
-        set(view: &unlockView, with: viewModel)
+        viewLogic?.set(state: viewModel.state)
+        viewLogic?.set(model: viewModel)
+    }
+    
+    func displayUnlockDoor(viewModel: Unlock.UnlockDoor.ViewModel) {
+        viewLogic?.set(state: viewModel.state)
+        viewLogic?.set(model: viewModel)
     }
 }

@@ -24,19 +24,14 @@ class UnlockView: ScreenView {
         return view
     }()
     
-    lazy var errorView: UILabel = {
-        let label = UILabel()
-        label.text = "No door found 😢"
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.isHidden = true
-        return label
-    }()
-    
     lazy var unlockingView: DoorView = {
         let view = DoorView()
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var resultView: ResultView = {
+        let view = ResultView()
         view.isHidden = true
         return view
     }()
@@ -48,8 +43,8 @@ class UnlockView: ScreenView {
         
         scrollView.addSubview(container)
         container.addSubview(loadingView)
-        container.addSubview(errorView)
         container.addSubview(unlockingView)
+        container.addSubview(resultView)
     }
     
     override func buildConstraints() {
@@ -68,10 +63,11 @@ class UnlockView: ScreenView {
             make.centerY.equalToSuperview().multipliedBy(0.8)
         }
         
-        errorView.snp.makeConstraints { make in
+        resultView.snp.makeConstraints { make in
+            make.height.equalTo(resultView.snp.width).multipliedBy(0.54)
+            make.width.equalToSuperview().multipliedBy(0.7)
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().multipliedBy(0.8)
-            make.width.equalTo(120)
         }
         
         unlockingView.snp.makeConstraints { make in

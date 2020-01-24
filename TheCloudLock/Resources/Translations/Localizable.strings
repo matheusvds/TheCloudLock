@@ -10,3 +10,8 @@
 "common.ok" = "Ok";
 "common.cancel" = "Cancel";
 "common.error" = "Error";
+
+// MARK: UnlockScene
+
+"doorView.button.name" = "let's unlock it!";
+"loadingView.label.name" = "Searching nearest door";

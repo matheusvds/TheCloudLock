@@ -14,7 +14,7 @@ import UIKit
 
 protocol UnlockPresentationLogic {
     func presentFetchDoors(response: Unlock.FetchDoors.Response)
-    func presentFetchDoors(error: UnlockError)
+    func presentUnlockDoor(response: Unlock.UnlockDoor.Response)
 }
 
 class UnlockPresenter: UnlockPresentationLogic {
@@ -24,47 +24,122 @@ class UnlockPresenter: UnlockPresentationLogic {
     // MARK: UnlockPresentationLogic
     
     func presentFetchDoors(response: Unlock.FetchDoors.Response) {
-        let viewModel = convert(response: response)
+        let viewModel = format(response: response)
         viewController?.displayFetchDoors(viewModel: viewModel)
     }
     
-    func presentFetchDoors(error: UnlockError) {
-        let viewModel = convertError(error: error)
-        viewController?.displayFetchDoors(viewModel: viewModel)
-
+    func presentUnlockDoor(response: Unlock.UnlockDoor.Response) {
+        let viewModel = format(response: response)
+        viewController?.displayUnlockDoor(viewModel: viewModel)
     }
     
-    // MARK: Helper Methods
+    // MARK: UnlockDoor Helpers
     
-    func convert(response: Unlock.FetchDoors.Response) -> Unlock.FetchDoors.ViewModel {
+    private func format(response: Unlock.UnlockDoor.Response) -> Unlock.UnlockDoor.ViewModel {
+        return Unlock.UnlockDoor.ViewModel(state: getState(from: response),
+                                           resultMessage: getMainMessage(from: response))
+    }
+    
+    private func getState(from response: Unlock.UnlockDoor.Response) -> Unlock.State {
+        guard let error = response.error else {
+            return .unlockDoorSucess
+        }
         
-        return Unlock.FetchDoors.ViewModel(state: .initialSuccess,
-                                            doorImage: getImage(from: response),
-                                            doorName: response.name ?? String())
+        switch error {
+        case .cannotUnlock:
+            return .unlockDoorError
+        case .permissionDenied:
+            return .unlockDoorAuthError
+        default:
+            return .unlockDoorError
+        }
     }
     
-    func convertError(error: UnlockError) -> Unlock.FetchDoors.ViewModel {
-        return Unlock.FetchDoors.ViewModel(state: .initialSuccess,
-                                            doorImage: UIImage(),
-                                            doorName: String())
-    }
-    
-    private func getImage(from response: Unlock.FetchDoors.Response) -> UIImage? {
+    private func getMainMessage(from response: Unlock.UnlockDoor.Response) -> String {
+        guard let error = response.error else {
+            return getSuccessMessage(from: response)
+        }
         
+        return getErrorMessage(from: error)
+    }
+    
+    private func getSuccessMessage(from response: Unlock.UnlockDoor.Response) -> String {
+        switch getState(from: response) {
+        case .unlockDoorSucess:
+            return "Unlocked! You're free to go!"
+        default:
+            return String()
+        }
+    }
+    
+    // MARK: FetchDoors Helpers
+    
+    private func format(response: Unlock.FetchDoors.Response) -> Unlock.FetchDoors.ViewModel {
+        let items = response.doors?.map({
+            Unlock.FetchDoors.ViewModel.Item(doorImage: getImage(from: $0),
+                                             doorName: getDoorName(from: $0))
+        })
+        
+        return Unlock.FetchDoors.ViewModel(state: getState(from: response),
+                                           resultMessage: getMainMessage(from: response),
+                                           items: items ?? [])
+    }
+    
+    private func getDoorName(from response: Door) -> String {
+        guard let name = response.name else {
+            return String()
+        }
+        
+        return name
+    }
+    
+    private func getImage(from response: Door) -> UIImage? {
         guard let image = response.image else {
             return nil
         }
         
         switch image {
+            
         case "hallway":
             return R.image.hallway()
         case "office":
             return R.image.office()
         case "livingroom":
             return R.image.livingroom()
-        
+            
         default:
             return nil
+        }
+    }
+    
+    private func getState(from response: Unlock.FetchDoors.Response) -> Unlock.State {
+        guard response.error != nil else {
+            return .fetchDoorsSuccess
+        }
+        
+        return .fetchDoorsError
+    }
+    
+    private func getMainMessage(from response: Unlock.FetchDoors.Response) -> String {
+        guard let error = response.error else {
+            return ""
+        }
+        
+        return getErrorMessage(from: error)
+    }
+    
+    // MARK: - Shared Helpers
+    
+    private func getErrorMessage(from error: CloudLockError) -> String {
+        switch error {
+            
+        case .cannotFetch:
+            return "We could not find any doors 😢"
+        case .cannotUnlock:
+            return "An error ocurred while unlocking 🔑"
+        case .permissionDenied:
+            return "Do you have permission? 🕵️‍♂️"
+            
         }
     }
 }

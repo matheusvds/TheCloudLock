@@ -15,23 +15,47 @@ import UIKit
 enum Unlock {
     // MARK: Use cases
     enum FetchDoors {
+        
         struct Request {}
-        struct Response: Codable {
-            let doorID: Int?
-            let name: String?
-            let image: String?
+        
+        struct Response {
+            let doors: [Door]?
+            let error: CloudLockError?
         }
+        
         struct ViewModel {
             let state: State
-            let doorImage: UIImage?
-            let doorName: String
+            let resultMessage: String
+            let items: [Item]
+            
+            struct Item {
+                let doorImage: UIImage?
+                let doorName: String
+            }
+        }
+    }
+    
+    enum UnlockDoor {
+        struct Request {}
+        
+        struct Response {
+            let error: CloudLockError?
+        }
+        
+        struct ViewModel {
+            let state: State
+            let resultMessage: String
         }
     }
     
     enum State {
-        case loading
-        case error
-        case initialSuccess
-        case success
+        case loading(_ message: String?)
+        case fetchDoorsError
+        case fetchDoorsSuccess
+        case unlockDoorSucess
+        case unlockDoorError
+        case unlockDoorAuthError
     }
 }
+
+extension Unlock.State: Equatable {}

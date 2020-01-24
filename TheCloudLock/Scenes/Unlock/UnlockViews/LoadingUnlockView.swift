@@ -12,7 +12,6 @@ class LoadingUnlockView: View {
     
     lazy var centerText: UILabel = {
         let label = UILabel()
-        label.text = "Searching nearest door"
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = .black
         label.textAlignment = .center
