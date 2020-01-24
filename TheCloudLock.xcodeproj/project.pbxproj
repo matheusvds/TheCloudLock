@@ -32,6 +32,11 @@
 		2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */; };
 		2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */; };
 		2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828323D52C8D0043F5EE /* UIColor+.swift */; };
+		2F24828C23D7522E0043F5EE /* UnlockViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */; };
+		2F24828D23D7522E0043F5EE /* UnlockInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */; };
+		2F24828E23D7522E0043F5EE /* UnlockWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */; };
+		2F24828F23D7522E0043F5EE /* UnlockPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */; };
+		2F24829123D784090043F5EE /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829023D784090043F5EE /* Seeds.swift */; };
 		2F24829723D8B3140043F5EE /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829623D8B3140043F5EE /* Door.swift */; };
 		2F24829A23D8B72C0043F5EE /* CloudLockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829923D8B72B0043F5EE /* CloudLockAPI.swift */; };
 		2F2482A023D8FBB40043F5EE /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829F23D8FBB40043F5EE /* Identifiable.swift */; };
@@ -89,6 +94,11 @@
 		2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUnlockView.swift; sourceTree = "<group>"; };
 		2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewStateLogic.swift; sourceTree = "<group>"; };
 		2F24828323D52C8D0043F5EE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewControllerTests.swift; sourceTree = "<group>"; };
+		2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockInteractorTests.swift; sourceTree = "<group>"; };
+		2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockWorkerTests.swift; sourceTree = "<group>"; };
+		2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPresenterTests.swift; sourceTree = "<group>"; };
+		2F24829023D784090043F5EE /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		2F24829623D8B3140043F5EE /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		2F24829923D8B72B0043F5EE /* CloudLockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPI.swift; sourceTree = "<group>"; };
 		2F24829F23D8FBB40043F5EE /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -178,6 +188,9 @@
 		2A1E774A1F384BFD006C84D4 /* TheCloudLockTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F24829023D784090043F5EE /* Seeds.swift */,
+				2F2482A423D9ECC40043F5EE /* Extensions */,
+				2F24828523D5FE920043F5EE /* Scenes */,
 				2A9222841F387B1D00A648E6 /* TheCloudLockTests-Bridging-Header.h */,
 				2A1E774D1F384BFD006C84D4 /* Info.plist */,
 				C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */,
@@ -308,6 +321,25 @@
 				2FBFB99523DA410F0015AF42 /* ErrorView.swift */,
 			);
 			path = UnlockViews;
+			sourceTree = "<group>";
+		};
+		2F24828523D5FE920043F5EE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2F24828623D5FEC20043F5EE /* Unlock */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2F24828623D5FEC20043F5EE /* Unlock */ = {
+			isa = PBXGroup;
+			children = (
+				2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */,
+				2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */,
+				2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */,
+				2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */,
+			);
+			path = Unlock;
 			sourceTree = "<group>";
 		};
 		2F24829223D8AA2D0043F5EE /* Workers */ = {
@@ -662,7 +694,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F24828D23D7522E0043F5EE /* UnlockInteractorTests.swift in Sources */,
+				2F24828C23D7522E0043F5EE /* UnlockViewControllerTests.swift in Sources */,
+				2F24829123D784090043F5EE /* Seeds.swift in Sources */,
 				C90395261FC62399006F1DC0 /* TestsAppDelegate.swift in Sources */,
+				2F24828E23D7522E0043F5EE /* UnlockWorkerTests.swift in Sources */,
+				2F24828F23D7522E0043F5EE /* UnlockPresenterTests.swift in Sources */,
+				2F2482A623D9ECEC0043F5EE /* CloudLockResult+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

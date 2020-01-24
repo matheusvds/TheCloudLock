@@ -13,80 +13,128 @@
 @testable import TheCloudLock
 import XCTest
 
-class UnlockViewControllerTests: XCTestCase
-{
-  // MARK: Subject under test
-  
-  var sut: UnlockViewController!
-  var window: UIWindow!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    window = UIWindow()
-    setupUnlockViewController()
-  }
-  
-  override func tearDown()
-  {
-    window = nil
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupUnlockViewController()
-  {
-    let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateViewController(withIdentifier: "UnlockViewController") as! UnlockViewController
-  }
-  
-  func loadView()
-  {
-    window.addSubview(sut.view)
-    RunLoop.current.run(until: Date())
-  }
-  
-  // MARK: Test doubles
-  
-  class UnlockBusinessLogicSpy: UnlockBusinessLogic
-  {
-    var doSomethingCalled = false
+class UnlockControllerTests: XCTestCase {
+    // MARK: Subject under test
     
-    func doSomething(request: Unlock.Something.Request)
-    {
-      doSomethingCalled = true
+    var sut: UnlockController!
+    var window: UIWindow!
+    
+    // MARK: Test lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        window = UIWindow()
+        setupUnlockViewController()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testShouldDoSomethingWhenViewIsLoaded()
-  {
-    // Given
-    let spy = UnlockBusinessLogicSpy()
-    sut.interactor = spy
     
-    // When
-    loadView()
+    override func tearDown() {
+        window = nil
+        super.tearDown()
+    }
     
-    // Then
-    XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
-  }
-  
-  func testDisplaySomething()
-  {
-    // Given
-    let viewModel = Unlock.Something.ViewModel()
+    // MARK: Test setup
     
-    // When
-    loadView()
-    sut.displaySomething(viewModel: viewModel)
+    func setupUnlockViewController() {
+        sut = UnlockController()
+    }
     
-    // Then
-    //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
-  }
+    func loadView() {
+        window.addSubview(sut.view)
+        RunLoop.current.run(until: Date())
+    }
+    
+    // MARK: Test doubles
+    
+    class UnlockBusinessLogicSpy: UnlockBusinessLogic {
+        
+        var handleFetchDoorsCalled = false
+        
+        func fetchDoors(request: Unlock.FetchDoors.Request) {
+            handleFetchDoorsCalled = true
+        }
+        
+        func unlockDoor(request: Unlock.UnlockDoor.Request) {
+            
+        }
+    }
+    
+    class UnlockBusinessLogicDummy: UnlockBusinessLogic {
+        
+        func fetchDoors(request: Unlock.FetchDoors.Request) {}
+        func unlockDoor(request: Unlock.UnlockDoor.Request) {}
+    }
+    
+    class ViewLogicSpy: UIView, UnlockViewStateLogic, UnlockViewEventsLogic {
+        var backButton: UIButton {
+            return UIButton()
+        }
+        
+        var unlockButton: UIButton {
+            return UIButton()
+        }
+        
+        var setViewCalled = false
+        
+        func set(model: Unlock.FetchDoors.ViewModel) {
+            setViewCalled = true
+        }
+        
+        func set(model: Unlock.UnlockDoor.ViewModel) {
+            
+        }
+        
+        func set(state: Unlock.State) {
+            
+        }
+    }
+    
+    // MARK: Tests
+    
+    func testControllerShouldAskInteractorToFetchDoorsWhenViewDidLoad() {
+        let spy = UnlockBusinessLogicSpy()
+        sut.interactor = spy
+        loadView()
+        
+        sut.viewDidLoad()
+        
+        XCTAssertTrue(spy.handleFetchDoorsCalled, "viewDidLoad() should ask the interactor to fetch doors")
+    }
+    
+    func testDisplayFetchDoorsShouldSetViewWithViewModel() {
+        let dummy = UnlockBusinessLogicDummy()
+        let spy = ViewLogicSpy()
+        
+        sut.interactor = dummy
+        sut.viewLogic = spy
+        
+        let viewModel = Unlock.FetchDoors.ViewModel(state: .fetchDoorsError,
+                                                    resultMessage: "",
+                                                    items: [])
+        
+        sut.displayFetchDoors(viewModel: viewModel)
+        
+        XCTAssertTrue(spy.setViewCalled, "displayFetchDoors should ask the view logic to set the model")
+    }
+    
+    func testControllerShouldSetPropertiesWhenViewDidLoad() {
+        let dummy = UnlockBusinessLogicDummy()
+        sut.interactor = dummy
+        loadView()
+        
+        sut.viewDidLoad()
+        
+        XCTAssertNotNil(sut.interactor, "controller should set interactor property when view did load")
+        XCTAssertNotNil(sut.viewLogic, "controller should set viewlogic property when view did load")
+        XCTAssertNotNil(sut.router, "controller should set router property when view did load")
+    }
+    
+    func testControllerSetTitleWhenViewDidLoad() {
+        let dummy = UnlockBusinessLogicDummy()
+        sut.interactor = dummy
+        loadView()
+        
+        sut.viewDidLoad()
+        
+        XCTAssertEqual(sut.title, "Unlock")
+    }
 }

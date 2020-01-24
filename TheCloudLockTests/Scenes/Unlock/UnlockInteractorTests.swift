@@ -13,57 +13,103 @@
 @testable import TheCloudLock
 import XCTest
 
-class UnlockInteractorTests: XCTestCase
-{
-  // MARK: Subject under test
-  
-  var sut: UnlockInteractor!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    setupUnlockInteractor()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupUnlockInteractor()
-  {
-    sut = UnlockInteractor()
-  }
-  
-  // MARK: Test doubles
-  
-  class UnlockPresentationLogicSpy: UnlockPresentationLogic
-  {
-    var presentSomethingCalled = false
+class UnlockInteractorTests: XCTestCase {
+
+    var sut: UnlockInteractor!
     
-    func presentSomething(response: Unlock.Something.Response)
-    {
-      presentSomethingCalled = true
+    override func setUp() {
+        super.setUp()
+        setupUnlockInteractor()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testDoSomething()
-  {
-    // Given
-    let spy = UnlockPresentationLogicSpy()
-    sut.presenter = spy
-    let request = Unlock.Something.Request()
     
-    // When
-    sut.doSomething(request: request)
+    override func tearDown() {
+        super.tearDown()
+    }
     
-    // Then
-    XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
-  }
+    func setupUnlockInteractor() {
+        sut = UnlockInteractor()
+    }
+    
+    // MARK: - Testing Doubles
+    
+    class UnlockPresentationLogicSpy: UnlockPresentationLogic {
+
+        var presentFetchDoorsCalled = false
+        var presentFetchDoorsErrorCalled = false
+        
+        func presentFetchDoors(response: Unlock.FetchDoors.Response) {
+            presentFetchDoorsCalled = true
+        }
+        
+        func presentUnlockDoor(response: Unlock.UnlockDoor.Response) {
+            
+        }
+        
+    }
+    
+    class UnlockWorkerDummy: UnlockWorker {
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+            completion(.success(result: []))
+        }
+    }
+    
+    class UnlockWorkerSpy: UnlockWorker {
+        
+        var findDoorsCalled = false
+        
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+            findDoorsCalled = true
+            completion(.success(result: []))
+        }
+    }
+    
+    class UnlockWorkerFake: UnlockWorker {
+        
+        var success = false
+        
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+            guard success else {
+                completion(.failure(error: .cannotFetch))
+                return
+            }
+            
+            completion(.success(result: []))
+        }
+    }
+    
+    class CloudLockProtocolDummy: CloudLockProtocol {
+
+        func fetchDoors(completion: @escaping FetchDoorsCompletionHandler) {
+            completion(.success(result: []))
+        }
+        
+        func unlockDoor(with doorID: Int, completion: @escaping UnlockDoorCompletionHandler) {
+            
+        }
+    }
+    
+    // MARK: - Tests
+    
+    func testFetchDoorsShouldAskWorkerToFindDoors() {
+        let workerSpy = UnlockWorkerSpy(cloudLock: CloudLockProtocolDummy())
+        sut.worker = workerSpy
+        
+        let request = Unlock.FetchDoors.Request()
+        sut.fetchDoors(request: request)
+        
+        XCTAssert(workerSpy.findDoorsCalled, "findDoors method should be called")
+    }
+    
+    func testFetchDoorsShouldAskPresenterToPresentResult() {
+        let workerDummy = UnlockWorkerDummy(cloudLock: CloudLockProtocolDummy())
+        let presenterSpy = UnlockPresentationLogicSpy()
+        
+        sut.worker = workerDummy
+        sut.presenter = presenterSpy
+        
+        let request = Unlock.FetchDoors.Request()
+        sut.fetchDoors(request: request)
+        
+        XCTAssert(presenterSpy.presentFetchDoorsCalled, "presentFetchDoors should be called")
+    }
 }

@@ -13,57 +13,79 @@
 @testable import TheCloudLock
 import XCTest
 
-class UnlockPresenterTests: XCTestCase
-{
-  // MARK: Subject under test
-  
-  var sut: UnlockPresenter!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    setupUnlockPresenter()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupUnlockPresenter()
-  {
-    sut = UnlockPresenter()
-  }
-  
-  // MARK: Test doubles
-  
-  class UnlockDisplayLogicSpy: UnlockDisplayLogic
-  {
-    var displaySomethingCalled = false
+class UnlockPresenterTests: XCTestCase {
+    // MARK: Subject under test
     
-    func displaySomething(viewModel: Unlock.Something.ViewModel)
-    {
-      displaySomethingCalled = true
+    var sut: UnlockPresenter!
+    
+    // MARK: Test lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        setupUnlockPresenter()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testPresentSomething()
-  {
-    // Given
-    let spy = UnlockDisplayLogicSpy()
-    sut.viewController = spy
-    let response = Unlock.Something.Response()
     
-    // When
-    sut.presentSomething(response: response)
+    override func tearDown() {
+        super.tearDown()
+    }
     
-    // Then
-    XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
-  }
+    // MARK: Test setup
+    
+    func setupUnlockPresenter() {
+        sut = UnlockPresenter()
+    }
+    
+    // MARK: Test doubles
+    
+    class UnlockDisplayLogicSpy: UnlockDisplayLogic {
+        
+        var displayFetchDoorsCalled = false
+        var viewModel: Unlock.FetchDoors.ViewModel!
+        
+        func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel) {
+            displayFetchDoorsCalled = true
+            self.viewModel = viewModel
+        }
+        
+        func displayUnlockDoor(viewModel: Unlock.UnlockDoor.ViewModel) {
+            
+        }
+    }
+    
+    // MARK: Tests
+    
+    func testPresentFetchDoorsShouldFormatFetchDoorsResponseToDisplay() {
+        let diplayLogicSpy = UnlockDisplayLogicSpy()
+        sut.viewController = diplayLogicSpy
+        let response = Unlock.FetchDoors.Response(doors: [Seeds.Doors.hallway], error: nil)
+        
+        sut.presentFetchDoors(response: response)
+        
+        let doorFound = diplayLogicSpy.viewModel.items.first
+        
+        XCTAssertNotNil(doorFound?.doorImage, "presentFetchDoors should set a door image")
+        XCTAssertEqual(doorFound?.doorName, "Living Room", "presentFetchDoors should set a door name")
+    }
+    
+    func testPresentFetchDoorsShouldAskViewControllerToDisplayViewModel() {
+        let diplayLogicSpy = UnlockDisplayLogicSpy()
+        sut.viewController = diplayLogicSpy
+        let response = Unlock.FetchDoors.Response(doors: [], error: nil)
+        
+        sut.presentFetchDoors(response: response)
+        
+        XCTAssertTrue(diplayLogicSpy.displayFetchDoorsCalled, "presentFetchDoors should call display logic")
+    }
+    
+    func testPresentFetchDoorsShouldSetViewModelStateErrorWhenResponseErrorNotNil() {
+        let diplayLogicSpy = UnlockDisplayLogicSpy()
+        sut.viewController = diplayLogicSpy
+        let response = Unlock.FetchDoors.Response(doors: [], error: .cannotFetch)
+        
+        sut.presentFetchDoors(response: response)
+        
+        let viewState = diplayLogicSpy.viewModel.state
+        
+        XCTAssertEqual(viewState, .fetchDoorsError, "presentFetchDoors should set view state to error ")
+    }
 }
