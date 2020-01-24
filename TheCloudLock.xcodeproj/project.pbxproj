@@ -45,6 +45,7 @@
 		2FBFB99023D9FFFD0015AF42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB98F23D9FFFD0015AF42 /* Status.swift */; };
 		2FBFB99323DA10150015AF42 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99223DA10150015AF42 /* ResultView.swift */; };
 		2FBFB99623DA410F0015AF42 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99523DA410F0015AF42 /* ErrorView.swift */; };
+		2FBFB99823DA70F30015AF42 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99723DA70F30015AF42 /* StateTableViewController.swift */; };
 		553FC23C214047CB001D9362 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FC23B214047CB001D9362 /* R.generated.swift */; };
 		BC3EC2A0B7E0679DBD846100 /* Pods_TheCloudLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */; };
 		C90395241FC622D2006F1DC0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395231FC622D2006F1DC0 /* main.swift */; };
@@ -107,6 +108,7 @@
 		2FBFB98F23D9FFFD0015AF42 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		2FBFB99223DA10150015AF42 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		2FBFB99523DA410F0015AF42 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		2FBFB99723DA70F30015AF42 /* StateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
 		553FC23B214047CB001D9362 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55F50BE321404BDD00FAC039 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.release.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2F24829823D8B71D0043F5EE /* Services */,
 				2F24829223D8AA2D0043F5EE /* Workers */,
 				2AB31D9F1F38741400B7D1F3 /* Scenes */,
+				2AFB310A1F385A20009C4586 /* Helpers */,
 				2AB31D9E1F38740A00B7D1F3 /* Shared */,
 			);
 			path = TheCloudLock;
@@ -201,7 +204,6 @@
 		2AB31D9E1F38740A00B7D1F3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2AFB310A1F385A20009C4586 /* Helpers */,
 				2F2482A323D90C0A0043F5EE /* Base Entities */,
 			);
 			path = Shared;
@@ -246,6 +248,7 @@
 				2A9222811F38797600A648E6 /* ConfigurationManager.swift */,
 				2A1DD4DE1F389C2200712195 /* DeeplinkHandler.swift */,
 				2A1DD4E01F389E2100712195 /* NotificationsHandler.swift */,
+				2FBFB99723DA70F30015AF42 /* StateTableViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */,
 				2F24829723D8B3140043F5EE /* Door.swift in Sources */,
 				2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */,
+				2FBFB99823DA70F30015AF42 /* StateTableViewController.swift in Sources */,
 				2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */,
 				2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */,
 				2F24826F23D3E15A0043F5EE /* UnlockView.swift in Sources */,

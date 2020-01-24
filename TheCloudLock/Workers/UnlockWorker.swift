@@ -35,11 +35,14 @@ class UnlockWorker {
         cloudLock.unlockDoor(with: doorID) { result in
             switch result {
             case .success(let data):
-                if data.code == 204 {
+                switch data.code {
+                case 200:
+                    completion(.success(result: data))
+                case 204:
                     completion(.failure(error: .permissionDenied))
-                    return
+                default:
+                    completion(.failure(error: .cannotUnlock))
                 }
-                completion(.success(result: data))
             case .failure(let error):
                 completion(.failure(error: error))
             }

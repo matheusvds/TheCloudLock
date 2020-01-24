@@ -45,4 +45,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/
         notificationsHandler.handleRemoteNotification(with: userInfo)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+
+        let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+        if let statusBarRect = window?.windowScene?.statusBarManager?.statusBarFrame {
+            let rect = CGRect(origin: statusBarRect.origin,
+                              size: CGSize(width: statusBarRect.width,
+                                           height: statusBarRect.height * 2))
+            
+            guard let touchPoint = event?.allTouches?.first?.location(in: self.window) else {
+                return
+            }
+
+            if rect.contains(touchPoint) {
+                NotificationCenter.default.post(statusBarTappedNotification)
+            }
+        }
+    }
+    
 }
+
+let statusBarTappedNotification = Notification(name: Notification.Name(rawValue: "statusBarTappedNotification"))

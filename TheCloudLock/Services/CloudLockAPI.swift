@@ -9,20 +9,65 @@
 import Foundation
 
 class CloudLockAPI: CloudLockProtocol {
-    func fetchDoors(completion: @escaping FetchDoorsCompletionHandler) {
+    
+    static var fetchDoorsResponse: CloudLockResult<[Door]> = .failure(error: .cannotFetch)
+    static var unlockDoorResponse: CloudLockResult<Status> = .success(result: Status(code: 204))
+
+    func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            completion(.success(result: [
-//                Door(doorID: 0, name: "Living Room", image: "livingroom")
-//            ]))
-            completion(.failure(error: .cannotFetch))
-            
+            completion(CloudLockAPI.fetchDoorsResponse)
         }
     }
     
     func unlockDoor(with doorID: Int, completion: @escaping UnlockDoorCompletionHandler) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            completion(.success(result: Status(code: 204)))
+            completion(CloudLockAPI.unlockDoorResponse)
         }
     }
 }
 
+//
+//struct FakeResponse {
+//    static let fetchDoorsSuccessJSON: String =
+//"""
+//{
+//    "doorID": 0,
+//    "name": "Living Room",
+//    "image": "livingroom"
+//}
+//"""
+//    static let unlockDoorSuccessJSON: String =
+//"""
+//{
+//    "code": 200
+//}
+//"""
+//    static let unlockDoorAuthErrorJSON: String =
+//"""
+//{
+//    "code": 204
+//}
+//"""
+//}
+//
+//struct FakeServerData {
+//    static var fetchDoorsSuccessResponse: Data {
+//        return FakeResponse.fetchDoorsSuccessJSON.data(using: .utf8)!
+//    }
+//
+//    static var fetchDoorsErrorResponse: Data {
+//        return String().data(using: .utf8)!
+//    }
+//
+//    static var unlockDoorSuccessResponse: Data {
+//        return FakeResponse.unlockDoorSuccessJSON.data(using: .utf8)!
+//    }
+//
+//    static var unlockhDoorErrorResponse: Data {
+//        return String().data(using: .utf8)!
+//    }
+//
+//    static var unlockDoorAuthErrorJSON: Data {
+//        return FakeResponse.unlockDoorAuthErrorJSON.data(using: .utf8)!
+//    }
+//}
