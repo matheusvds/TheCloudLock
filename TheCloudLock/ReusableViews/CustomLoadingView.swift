@@ -8,8 +8,10 @@
 
 import SnapKit
 
+/// View used to display a loading-with-activityIndicator format
 class CustomLoadingView: View {
     
+    /// The label with the main information message to be displayed
     lazy var centerText: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
@@ -41,9 +43,4 @@ class CustomLoadingView: View {
             make.top.equalTo(centerText.snp.bottom)
         }
     }
-    
-    override func addAdditionalConfiguration() {
-//        centerText.backgroundColor = .green
-    }
-    
 }

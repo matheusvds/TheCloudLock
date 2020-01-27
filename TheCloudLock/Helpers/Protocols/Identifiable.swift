@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Identifiable gives a class a reuseIdentifier based on the Type's name
 protocol Identifiable: class {
     static var reuseIdentifier: String { get }
 }

@@ -8,12 +8,17 @@
 
 import Foundation
 
+/// Defines a server to provide data
 protocol Server {
+    
+    /// Gets and parses data from FakeServer.json static variable
+    /// - Parameter completion: Callback containg the function's result
     func getData(completion: @escaping (Data?) -> Void)
 }
 
 class FakeServer: Server {
     static var json: String?
+    
     func getData(completion: @escaping (Data?) -> Void) {
         
         guard let json = FakeServer.json else {
@@ -30,6 +35,9 @@ class FakeServer: Server {
         }
     }
     
+    
+    /// Sets the correct response kind according to the model's type
+    /// - Parameter type: Generic type used to set the response
     static func setServer<T: Item>(type: T.Type) {
         // MARK: - Fetch
         

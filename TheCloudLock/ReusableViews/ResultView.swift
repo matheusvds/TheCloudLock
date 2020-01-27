@@ -9,8 +9,10 @@
 import Foundation
 import SnapKit
 
+/// ResultView is used to display information in a label-an- button format
 class ResultView: View {
-    
+        
+    /// The label with the main information message to be displayed
     lazy var centerText: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.unlockedFree()
@@ -21,6 +23,7 @@ class ResultView: View {
         return label
     }()
     
+    /// Add a taget to backButton to set an action for the view
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.commonBack(), for: .normal)

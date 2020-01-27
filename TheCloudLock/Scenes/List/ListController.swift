@@ -83,6 +83,8 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         refreshControl.addTarget(self, action: #selector(fetchItems), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
+    
+    // MARK: - BusinessLogic Calls
         
     @objc
     private func fetchItems() {

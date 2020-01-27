@@ -34,6 +34,7 @@ class Controller: UIViewController, BaseViewController, Identifiable {
     
     func start() {}
     
+    /// Sets controller titles according to the object's idenfier.
     func setTitle() {
         var title = Self.reuseIdentifier
         title = title.replacingOccurrences(of: "View", with: "")

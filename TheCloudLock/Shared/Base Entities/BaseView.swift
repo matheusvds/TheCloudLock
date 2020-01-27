@@ -11,6 +11,7 @@ import UIKit
 
 protocol BaseView: ViewCode {}
 
+/// View is used as parent for all custom views.
 class View: UIView, BaseView {
 
     override init(frame: CGRect = .zero) {
@@ -29,6 +30,7 @@ class View: UIView, BaseView {
     func addAdditionalConfiguration() {}
 }
 
+/// BaseScreenView with built-in scrollView
 class ScreenView: UIView, BaseView {
     
     lazy var scrollView: UIScrollView = {

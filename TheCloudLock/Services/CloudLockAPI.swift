@@ -68,37 +68,3 @@ class CloudLockAPI: CloudLockProtocol {
         }
     }
 }
-
-// MARK: - Cloud Lock Protocol
-
-protocol CloudLockProtocol {
-    func fetchItems<T: Codable>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void)
-    func fetchItemCredentials<T: Codable>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void)
-    func saveCredentials<T: Codable>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void)
-    func fetchDoors(completion: @escaping FetchDoorsCompletionHandler)
-    func unlockDoor(with doorID: String, completion: @escaping UnlockDoorCompletionHandler)
-}
-
-// MARK: - Operation results
-
-typealias SaveCredentialsCompletionHandler = (CloudLockResult<Status>) -> Void
-typealias FetchDoorsCompletionHandler = (CloudLockResult<[Doors]>) -> Void
-typealias UnlockDoorCompletionHandler = (CloudLockResult<Status>) -> Void
-
-enum CloudLockResult<U> {
-    case success(result: U)
-    case failure(error: CloudLockError)
-}
-
-// MARK: - Operation errors
-
-enum CloudLockError: Error {
-    
-    case cannotSaveCredentials
-    case cannotFetchCredentials
-    case cannotFetchItems
-    
-    case cannotFetch
-    case cannotUnlock
-    case permissionDenied
-}

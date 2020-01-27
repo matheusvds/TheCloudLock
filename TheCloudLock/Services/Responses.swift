@@ -8,48 +8,70 @@
 
 import Foundation
 
+/// Protocol to display mocked responses
 protocol ResponsesMock {
     
+    /// Sets API to fetch doors with success response
     static func fetchSuccess()
     
+    /// Sets API to fetch doors with error response
     static func fetchError()
-
+    
+    /// Sets API to unlock door with success response
     static func unlockSuccess()
-
+    
+    /// Sets API to unlock door with error response
     static func unlockError()
-
+    
+    /// Sets API to unlock door with permission error response
     static func unlockPermissionError()
-
+    
+    /// Sets API to fetch user items with success response
     static func fetchItemsUsersSuccess()
-
+    
+    /// Sets API to remove user with success response
     static func fetchItemsRemoveUsersSuccess()
-
+    
+    /// Sets API to fetch user credentials with success response
     static func fetchUserCredentialsSuccess()
-
+    
+    /// Sets API to fetch user credentials with error response
     static func fetchUserCredentialsError()
-
+    
+    /// Sets API to fetch user credentials with empty response
     static func fetchUserCredentialsEmpty()
-
+    
+    /// Sets API to fetch door items with success response
     static func fetchItemsDoorsSuccess()
 
+    /// Sets API to remove item with success response
     static func fetchItemsRemoveDoorsSuccess()
-
+    
+    /// Sets API to fetch door credentials with success response
     static func fetchDoorsCredentialsSuccess()
-
+    
+    /// Sets API to fetch door credentials with error response
     static func fetchDoorsCredentialsError()
-
+    
+    /// Sets API to fetch door credentials with empty response
     static func fetchDoorsCredentialsEmpty()
-
+    
+    /// Sets API to save user credentials with success response
     static func saveUserCredentialsSuccess()
-
+    
+    /// Sets API to save user credentials with error response
     static func saveUserCredentialsError()
-
+    
+    /// Sets API to save door credentials with success response
     static func saveDoorCredentialsSuccess()
-
+    
+    /// Sets API to save door credentials with error response
     static func saveDoorCredentialsError()
-
+    
+    /// Sets API to fetch items with error response
     static func fetchItemsError()
-
+    
+    /// Sets API to fetch items with empty response
     static func fetchItemsEmptyState()
 }
 

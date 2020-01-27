@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIViewController {
-        
+    
+    /// Presents a loading for any UIViewController
     func presentLoading() {
 
         let loadingIndicator = UIActivityIndicatorView(
@@ -26,6 +27,8 @@ extension UIViewController {
         navigationController?.present(alert, animated: true, completion: nil)
     }
     
+    /// Dismiss the presented view for any UIViewController
+    /// Used to dismissLoading
     func dissmissLoading(completion: (() -> Void)? = nil) {
         presentedViewController?.dismiss(animated: true, completion: completion)
     }

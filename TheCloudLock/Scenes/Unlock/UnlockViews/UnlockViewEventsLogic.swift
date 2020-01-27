@@ -8,16 +8,20 @@
 
 import UIKit
 
+/// Defines UI Events for Unlock View
 protocol UnlockViewEventsLogic {
     var unlockButton: UIButton { get }
     var backButton: UIButton { get }
 }
 
 extension UnlockView: UnlockViewEventsLogic {
+        
+    /// Input view for the view's backButton
     var backButton: UIButton {
         return resultView.backButton
     }
-    
+        
+    /// Input view for view's unlockButton
     var unlockButton: UIButton {
         return unlockingView.unlockButton
     }

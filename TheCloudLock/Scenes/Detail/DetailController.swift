@@ -70,6 +70,8 @@ class DetailController<T: Item>: Controller, DetailDisplayLogic, UITableViewDele
                                                             action: #selector(saveCredentials))
     }
     
+    // MARK: - BusinessLogic Calls
+    
     @objc
     private func saveCredentials() {
         presentLoading()

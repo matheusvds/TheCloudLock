@@ -9,8 +9,11 @@
 import SnapKit
 import UIKit
 
+
+/// ErrorView is a View used to display custom view errors
 class ErrorView: View {
     
+    /// Use label to the error message
     lazy var label: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 30)
@@ -20,6 +23,7 @@ class ErrorView: View {
         return label
     }()
     
+    /// Add a taget to backButton to set the views dismissal behaviour
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.commonBack(), for: .normal)
