@@ -83,3 +83,7 @@ iOSInjectionProject/
 
 # Bundler gems
 vendor/
+
+# Jazzy
+.build/
+docs/
