@@ -8,17 +8,96 @@
 
 import UIKit
 
+enum State: String {
+    case fetchSuccess = "Fetch Success"
+    case fetchError = "Fetch Error"
+    case unlockSuccess = "Unlock Success"
+    case unlockError = "Unlock Error"
+    case unlockPermissionError = "Unlock Permission Error"
+    case listError = "List Error"
+    case listEmpty = "List Empty"
+    case listDoorsSuccess = "List Doors Success"
+    case removeDoorSuccess = "Remove Door Success"
+    case listUsersSuccess = "List Users Success"
+    case removeUserSuccess = "Remove User Success"
+    case fetchUserCredetialsSuccess = "Fetch User Credentials Success"
+    case fetchUserCredentalsError = "Fetch User Credentials Error"
+    case fetchUserCredentialsEmpty = "Fetch User Credentials Empty"
+    case fetchDoorCredetialsSuccess = "Fetch Door Credentials Success"
+    case fetchDoorCredentalsError = "Fetch Door Credentials Error"
+    case fetchDoorCredentialsEmpty = "Fetch Door Credentials Empty"
+    case saveUserCredentialsSuccess = "Save User Credentials Success"
+    case saveUserCredentialsError = "Save User Credentials Error"
+    case saveDoorCredentialsSuccess = "Save Door Credentials Success"
+    case saveDoorCredentialsError = "Save Door Credentials Error"
+}
+
 class StateTableViewController: UITableViewController {
     
-    let sections = [
-        "fetchDoors",
-        "unlockDoor"
+    var response: ResponsesMock.Type
+    
+    init(response: ResponsesMock.Type = Responses.self) {
+        self.response = response
+        super.init(nibName: nil, bundle: nil)
+        response.fetchSuccess()
+        response.unlockSuccess()
+        response.fetchItemsUsersSuccess()
+        response.fetchItemsDoorsSuccess()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("No storyboards used")
+    }
+    
+    let sections =
+        [
+            "fetchDoors",
+            "unlockDoor",
+            "List (common states)",
+            "Doors",
+            "Users",
+            "Save Credentials"
     ]
     
-    let options = [
+    let options: [[State]] = [
         
-        ["Fetch Success", "Fetch Error"],
-        ["Unlock Success", "Unlock Error", "Unlock Permission Error"]
+        [
+            .fetchSuccess,
+            .fetchError
+        ],
+        
+        [
+            .unlockSuccess,
+            .unlockError,
+            .unlockPermissionError
+        ],
+        
+        [
+            .listError,
+            .listEmpty
+        ],
+        
+        [
+            .listDoorsSuccess,
+            .removeDoorSuccess,
+            .fetchDoorCredetialsSuccess,
+            .fetchDoorCredentalsError,
+            .fetchDoorCredentialsEmpty
+        ],
+        
+        [
+            .listUsersSuccess,
+            .removeUserSuccess,
+            .fetchUserCredetialsSuccess,
+            .fetchUserCredentalsError,
+            .fetchUserCredentialsEmpty
+        ],
+        [
+            .saveUserCredentialsSuccess,
+            .saveUserCredentialsError,
+            .saveDoorCredentialsSuccess,
+            .saveDoorCredentialsError
+        ]
         
     ]
     
@@ -42,58 +121,85 @@ class StateTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = options[indexPath.section][indexPath.row]
+        cell.textLabel?.text = options[indexPath.section][indexPath.row].rawValue
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch options[indexPath.section][indexPath.row] {
-        case "Fetch Success":
-            fetchSuccess()
-        case "Fetch Error":
-            fetchError()
-        case "Unlock Success":
-            unlockSuccess()
-        case "Unlock Error":
-            unlockError()
-        case "Unlock Permission Error":
-            unlockPermissionError()
-        default: ()
+            
+            // MARK: - Fetch
+            
+        case .fetchSuccess:
+            response.fetchSuccess()
+        case .fetchError:
+            response.fetchError()
+            
+            // MARK: - Unlock
+            
+        case .unlockSuccess:
+            response.unlockSuccess()
+        case .unlockError:
+            response.unlockError()
+        case .unlockPermissionError:
+            response.unlockPermissionError()
+            
+            // MARK: - Doors
+            
+        case .listDoorsSuccess:
+            response.fetchItemsDoorsSuccess()
+        
+        case .removeDoorSuccess:
+            response.fetchItemsRemoveDoorsSuccess()
+            
+            // MARK: - Users
+            
+        case .listUsersSuccess:
+            response.fetchItemsUsersSuccess()
+        
+        case .removeUserSuccess:
+            response.fetchItemsRemoveUsersSuccess()
+            
+            // MARK: - List
+            
+        case .listError:
+            response.fetchItemsError()
+            
+        case .listEmpty:
+            response.fetchItemsEmptyState()
+            
+        case .fetchUserCredetialsSuccess:
+            response.fetchUserCredentialsSuccess()
+            
+        case .fetchUserCredentalsError:
+            response.fetchUserCredentialsError()
+
+        case .fetchUserCredentialsEmpty:
+            response.fetchUserCredentialsEmpty()
+            
+        case .fetchDoorCredetialsSuccess:
+            response.fetchDoorsCredentialsSuccess()
+            
+        case .fetchDoorCredentalsError:
+            response.fetchDoorsCredentialsError()
+            
+        case .fetchDoorCredentialsEmpty:
+            response.fetchDoorsCredentialsEmpty()
+            
+        case .saveUserCredentialsSuccess:
+            response.saveUserCredentialsSuccess()
+            
+        case .saveUserCredentialsError:
+            response.saveUserCredentialsError()
+            
+        case .saveDoorCredentialsSuccess:
+            response.saveDoorCredentialsSuccess()
+            
+        case .saveDoorCredentialsError:
+            response.saveDoorCredentialsError()
         }
         
         dismiss(animated: true, completion: nil)
     }
-    
-    func fetchSuccess() {
-        CloudLockAPI.fetchDoorsResponse = .success(result: [
-            Door(doorID: 0, name: "Living Room", image: "livingroom"),
-            Door(doorID: 1, name: "Great Hallway", image: "hallway"),
-            Door(doorID: 2, name: "The Office", image: "office")
-            ].shuffled()
-        )
-    }
-    
-    func fetchError() {
-        CloudLockAPI.fetchDoorsResponse = .failure(error: .cannotFetch)
-    }
-    
-    func unlockSuccess() {
-        CloudLockAPI.unlockDoorResponse = .success(result:
-            Status(code: 200)
-        )
-    }
-    
-    func unlockError() {
-        CloudLockAPI.unlockDoorResponse = .success(result:
-            Status(code: 400)
-        )
-    }
-    
-    func unlockPermissionError() {
-        CloudLockAPI.unlockDoorResponse = .success(result:
-            Status(code: 204)
-        )
-    }
-    
 }

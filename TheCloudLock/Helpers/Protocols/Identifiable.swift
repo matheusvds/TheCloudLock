@@ -9,11 +9,11 @@
 import UIKit
 
 protocol Identifiable: class {
-    static var identifier: String { get }
+    static var reuseIdentifier: String { get }
 }
 
 extension Identifiable {
-    static var identifier: String {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
 }

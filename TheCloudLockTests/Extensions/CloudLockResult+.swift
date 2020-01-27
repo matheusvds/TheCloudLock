@@ -8,8 +8,8 @@
 
 @testable import TheCloudLock
 
-extension CloudLockResult where U == [Door] {
-    var data: [Door]? {
+extension CloudLockResult {
+    var data: U? {
         switch self {
         case .success(let data):
             return data

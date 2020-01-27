@@ -10,7 +10,10 @@
 import XCTest
 
 struct Seeds {
-    struct Doors {
-        static let hallway = Door(doorID: 0, name: "Living Room", image: "livingroom")
+    
+    struct Door {
+        static let hallway = Doors(id: "0", name: "Living Room", image: "livingroom")
+    }
+    
     }
 }
