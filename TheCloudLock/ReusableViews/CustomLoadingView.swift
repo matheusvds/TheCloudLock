@@ -8,7 +8,7 @@
 
 import SnapKit
 
-class LoadingUnlockView: View {
+class CustomLoadingView: View {
     
     lazy var centerText: UILabel = {
         let label = UILabel()

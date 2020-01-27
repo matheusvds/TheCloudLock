@@ -57,7 +57,7 @@ class UnlockPresenterTests: XCTestCase {
     func testPresentFetchDoorsShouldFormatFetchDoorsResponseToDisplay() {
         let diplayLogicSpy = UnlockDisplayLogicSpy()
         sut.viewController = diplayLogicSpy
-        let response = Unlock.FetchDoors.Response(doors: [Seeds.Doors.hallway], error: nil)
+        let response = Unlock.FetchDoors.Response(doors: [Seeds.Door.hallway], error: nil)
         
         sut.presentFetchDoors(response: response)
         

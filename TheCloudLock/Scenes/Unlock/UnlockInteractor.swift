@@ -18,13 +18,13 @@ protocol UnlockBusinessLogic {
 }
 
 protocol UnlockDataStore {
-    var foundDoors: [Door]? { get }
+    var foundDoors: [Doors]? { get }
 }
 
 class UnlockInteractor: UnlockDataStore {
     var presenter: UnlockPresentationLogic?
-    var worker: UnlockWorker?
-    var foundDoors: [Door]?
+    var worker: DoorsWorker?
+    var foundDoors: [Doors]?
 }
 
 // MARK: UnlockBusinessLogic
@@ -32,16 +32,13 @@ class UnlockInteractor: UnlockDataStore {
 extension UnlockInteractor: UnlockBusinessLogic {
 
     func fetchDoors(request: Unlock.FetchDoors.Request) {
-        worker = worker ?? UnlockWorker(cloudLock: CloudLockAPI())
+        worker = worker ?? DoorsWorker(cloudLock: CloudLockAPI())
         worker?.fetchDoors(completion: { result in
             
             switch result {
             case .success(let data):
-                let doors = data.map({ Door(doorID: $0.doorID,
-                                            name: $0.name,
-                                            image: $0.image) })
-                self.foundDoors = doors
-                let response = Unlock.FetchDoors.Response(doors: doors, error: nil)
+                self.foundDoors = data
+                let response = Unlock.FetchDoors.Response(doors: data, error: nil)
                 self.presenter?.presentFetchDoors(response: response)
                 
             case .failure(let error):
@@ -52,13 +49,13 @@ extension UnlockInteractor: UnlockBusinessLogic {
     }
     
     func unlockDoor(request: Unlock.UnlockDoor.Request) {
-        guard let doorID = foundDoors?.first?.doorID else {
+        guard let doorID = foundDoors?.first?.id else {
             let response = Unlock.UnlockDoor.Response(error: .cannotUnlock)
             self.presenter?.presentUnlockDoor(response: response)
             return
         }
         
-        worker = worker ?? UnlockWorker(cloudLock: CloudLockAPI())
+        worker = worker ?? DoorsWorker(cloudLock: CloudLockAPI())
         worker?.unlockDoor(doorID: doorID, completion: { result in
             
             switch result {

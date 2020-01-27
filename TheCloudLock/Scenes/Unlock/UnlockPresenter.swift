@@ -85,15 +85,11 @@ class UnlockPresenter: UnlockPresentationLogic {
                                            items: items ?? [])
     }
     
-    private func getDoorName(from response: Door) -> String {
-        guard let name = response.name else {
-            return String()
-        }
-        
-        return name
+    private func getDoorName(from response: Doors) -> String {
+        return response.name
     }
     
-    private func getImage(from response: Door) -> UIImage? {
+    private func getImage(from response: Doors) -> UIImage? {
         guard let image = response.image else {
             return nil
         }
@@ -139,7 +135,8 @@ class UnlockPresenter: UnlockPresentationLogic {
             return "An error ocurred while unlocking 🔑"
         case .permissionDenied:
             return "Do you have permission? 🕵️‍♂️"
-            
+        default:
+            return "Error"
         }
     }
 }

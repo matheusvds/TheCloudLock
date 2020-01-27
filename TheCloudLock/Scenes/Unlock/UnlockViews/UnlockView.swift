@@ -18,8 +18,8 @@ class UnlockView: ScreenView {
         return view
     }()
     
-    lazy var loadingView: LoadingUnlockView = {
-        let view = LoadingUnlockView()
+    lazy var loadingView: CustomLoadingView = {
+        let view = CustomLoadingView()
         view.isHidden = true
         return view
     }()

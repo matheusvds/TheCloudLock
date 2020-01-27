@@ -47,27 +47,27 @@ class UnlockInteractorTests: XCTestCase {
         
     }
     
-    class UnlockWorkerDummy: UnlockWorker {
-        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+    class UnlockWorkerDummy: DoorsWorker {
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Doors]>) -> Void) {
             completion(.success(result: []))
         }
     }
     
-    class UnlockWorkerSpy: UnlockWorker {
+    class UnlockWorkerSpy: DoorsWorker {
         
         var findDoorsCalled = false
         
-        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Doors]>) -> Void) {
             findDoorsCalled = true
             completion(.success(result: []))
         }
     }
     
-    class UnlockWorkerFake: UnlockWorker {
+    class UnlockWorkerFake: DoorsWorker {
         
         var success = false
         
-        override func fetchDoors(completion: @escaping (CloudLockResult<[Door]>) -> Void) {
+        override func fetchDoors(completion: @escaping (CloudLockResult<[Doors]>) -> Void) {
             guard success else {
                 completion(.failure(error: .cannotFetch))
                 return
@@ -78,12 +78,24 @@ class UnlockInteractorTests: XCTestCase {
     }
     
     class CloudLockProtocolDummy: CloudLockProtocol {
+        
+        func fetchItems<T>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void) where T: Decodable, T: Encodable {
+            
+        }
 
         func fetchDoors(completion: @escaping FetchDoorsCompletionHandler) {
             completion(.success(result: []))
         }
         
-        func unlockDoor(with doorID: Int, completion: @escaping UnlockDoorCompletionHandler) {
+        func unlockDoor(with doorID: String, completion: @escaping UnlockDoorCompletionHandler) {
+            
+        }
+        
+        func fetchItemCredentials<T>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void) where T: Decodable, T: Encodable {
+            
+        }
+        
+        func saveCredentials<T>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void) where T: Decodable, T: Encodable {
             
         }
     }

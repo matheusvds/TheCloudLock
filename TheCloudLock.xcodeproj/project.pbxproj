@@ -16,10 +16,34 @@
 		2A9222821F38797600A648E6 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9222811F38797600A648E6 /* ConfigurationManager.swift */; };
 		2ABEE6D41F38856A00531205 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ABEE6D31F38828A00531205 /* Configuration.plist */; };
 		2ABEE6D61F3886D700531205 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABEE6D51F3886D700531205 /* RootRouter.swift */; };
+		2F15FBE323DD1CE3000F5184 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBE223DD1CE3000F5184 /* Responses.swift */; };
+		2F15FBE723DD36E3000F5184 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBE623DD36E3000F5184 /* UIViewController.swift */; };
+		2F15FBEA23DDEF20000F5184 /* CredentialsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBE923DDEF20000F5184 /* CredentialsWorker.swift */; };
+		2F15FBEC23DDF27A000F5184 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBEB23DDF27A000F5184 /* Credential.swift */; };
+		2F15FBF323DE066F000F5184 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBED23DE066F000F5184 /* DetailPresenter.swift */; };
+		2F15FBF523DE066F000F5184 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBEF23DE066F000F5184 /* DetailRouter.swift */; };
+		2F15FBF623DE066F000F5184 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBF023DE066F000F5184 /* DetailModels.swift */; };
+		2F15FBF723DE066F000F5184 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBF123DE066F000F5184 /* DetailController.swift */; };
+		2F15FBF823DE066F000F5184 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBF223DE066F000F5184 /* DetailInteractor.swift */; };
+		2F15FBFE23DE1A18000F5184 /* DetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBFD23DE1A18000F5184 /* DetailTableView.swift */; };
+		2F15FC0023DE1D6F000F5184 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FBFF23DE1D6F000F5184 /* DetailWorker.swift */; };
+		2F15FC1223DE4DC6000F5184 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC0E23DE4DC6000F5184 /* ListViewControllerTests.swift */; };
+		2F15FC1323DE4DC6000F5184 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC0F23DE4DC6000F5184 /* ListInteractorTests.swift */; };
+		2F15FC1523DE4DC6000F5184 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC1123DE4DC6000F5184 /* ListPresenterTests.swift */; };
+		2F15FC1C23DE9D23000F5184 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC1823DE9D23000F5184 /* DetailViewControllerTests.swift */; };
+		2F15FC1D23DE9D23000F5184 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC1923DE9D23000F5184 /* DetailInteractorTests.swift */; };
+		2F15FC1F23DE9D23000F5184 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC1B23DE9D23000F5184 /* DetailPresenterTests.swift */; };
+		2F15FC2123DEA0CD000F5184 /* CloudLockAPIDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2023DEA0CD000F5184 /* CloudLockAPIDummy.swift */; };
+		2F15FC2323DF11DD000F5184 /* ListWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2223DF11DD000F5184 /* ListWorkerTests.swift */; };
+		2F15FC2523DF13C2000F5184 /* CloudLockAPISpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2423DF13C2000F5184 /* CloudLockAPISpy.swift */; };
+		2F15FC2723DF166F000F5184 /* CloudLockAPIFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2623DF166F000F5184 /* CloudLockAPIFake.swift */; };
+		2F15FC2923DF17C9000F5184 /* DetailWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2823DF17C9000F5184 /* DetailWorkerTests.swift */; };
+		2F15FC2E23DF1CE9000F5184 /* ResponseMockSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2D23DF1CE9000F5184 /* ResponseMockSpy.swift */; };
+		2F15FC3023DF21BE000F5184 /* StateTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2F23DF21BD000F5184 /* StateTableViewTests.swift */; };
 		2F24825A23D3D4D40043F5EE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825923D3D4D40043F5EE /* BaseNavigationController.swift */; };
 		2F24825C23D3D8DD0043F5EE /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825B23D3D8DD0043F5EE /* BaseTabbarController.swift */; };
 		2F24826523D3DD4A0043F5EE /* UnlockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825F23D3DD4A0043F5EE /* UnlockPresenter.swift */; };
-		2F24826623D3DD4A0043F5EE /* UnlockWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826023D3DD4A0043F5EE /* UnlockWorker.swift */; };
+		2F24826623D3DD4A0043F5EE /* DoorsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826023D3DD4A0043F5EE /* DoorsWorker.swift */; };
 		2F24826723D3DD4A0043F5EE /* UnlockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */; };
 		2F24826823D3DD4A0043F5EE /* UnlockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826223D3DD4A0043F5EE /* UnlockModels.swift */; };
 		2F24826923D3DD4A0043F5EE /* UnlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826323D3DD4A0043F5EE /* UnlockController.swift */; };
@@ -29,15 +53,15 @@
 		2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827223D3F4EC0043F5EE /* BaseView.swift */; };
 		2F24827623D4A3100043F5EE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827523D4A3100043F5EE /* BaseViewController.swift */; };
 		2F24827E23D518810043F5EE /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827D23D518810043F5EE /* DoorView.swift */; };
-		2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */; };
+		2F24828023D518A60043F5EE /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827F23D518A60043F5EE /* CustomLoadingView.swift */; };
 		2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */; };
 		2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828323D52C8D0043F5EE /* UIColor+.swift */; };
 		2F24828C23D7522E0043F5EE /* UnlockViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */; };
 		2F24828D23D7522E0043F5EE /* UnlockInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */; };
-		2F24828E23D7522E0043F5EE /* UnlockWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */; };
+		2F24828E23D7522E0043F5EE /* DoorsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828A23D7522E0043F5EE /* DoorsWorkerTests.swift */; };
 		2F24828F23D7522E0043F5EE /* UnlockPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */; };
 		2F24829123D784090043F5EE /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829023D784090043F5EE /* Seeds.swift */; };
-		2F24829723D8B3140043F5EE /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829623D8B3140043F5EE /* Door.swift */; };
+		2F24829723D8B3140043F5EE /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829623D8B3140043F5EE /* Doors.swift */; };
 		2F24829A23D8B72C0043F5EE /* CloudLockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829923D8B72B0043F5EE /* CloudLockAPI.swift */; };
 		2F2482A023D8FBB40043F5EE /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829F23D8FBB40043F5EE /* Identifiable.swift */; };
 		2F2482A623D9ECEC0043F5EE /* CloudLockResult+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2482A523D9ECEC0043F5EE /* CloudLockResult+.swift */; };
@@ -46,12 +70,16 @@
 		2FBFB99323DA10150015AF42 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99223DA10150015AF42 /* ResultView.swift */; };
 		2FBFB99623DA410F0015AF42 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99523DA410F0015AF42 /* ErrorView.swift */; };
 		2FBFB99823DA70F30015AF42 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99723DA70F30015AF42 /* StateTableViewController.swift */; };
-		2FBFB9A023DB2FE60015AF42 /* DoorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99A23DB2FE60015AF42 /* DoorsPresenter.swift */; };
-		2FBFB9A123DB2FE60015AF42 /* DoorsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99B23DB2FE60015AF42 /* DoorsWorker.swift */; };
-		2FBFB9A223DB2FE60015AF42 /* DoorsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99C23DB2FE60015AF42 /* DoorsRouter.swift */; };
-		2FBFB9A323DB2FE60015AF42 /* DoorsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99D23DB2FE60015AF42 /* DoorsModels.swift */; };
-		2FBFB9A423DB2FE60015AF42 /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99E23DB2FE60015AF42 /* DoorsViewController.swift */; };
-		2FBFB9A523DB2FE60015AF42 /* DoorsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99F23DB2FE60015AF42 /* DoorsInteractor.swift */; };
+		2FBFB9AF23DB87420015AF42 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9A923DB87420015AF42 /* ListPresenter.swift */; };
+		2FBFB9B023DB87420015AF42 /* ListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9AA23DB87420015AF42 /* ListWorker.swift */; };
+		2FBFB9B123DB87420015AF42 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9AB23DB87420015AF42 /* ListRouter.swift */; };
+		2FBFB9B223DB87420015AF42 /* ListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9AC23DB87420015AF42 /* ListModels.swift */; };
+		2FBFB9B323DB87420015AF42 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9AD23DB87420015AF42 /* ListController.swift */; };
+		2FBFB9B423DB87420015AF42 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9AE23DB87420015AF42 /* ListInteractor.swift */; };
+		2FBFB9BF23DCB0030015AF42 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9BE23DCB0030015AF42 /* Item.swift */; };
+		2FBFB9C123DCB55D0015AF42 /* ListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9C023DCB55D0015AF42 /* ListTableView.swift */; };
+		2FBFB9C523DCF8870015AF42 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9C423DCF8870015AF42 /* Users.swift */; };
+		2FBFB9C723DCFACE0015AF42 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB9C623DCFACE0015AF42 /* ListTableViewCell.swift */; };
 		553FC23C214047CB001D9362 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553FC23B214047CB001D9362 /* R.generated.swift */; };
 		BC3EC2A0B7E0679DBD846100 /* Pods_TheCloudLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053279ADFB66D889DEA2D03B /* Pods_TheCloudLock.framework */; };
 		C90395241FC622D2006F1DC0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395231FC622D2006F1DC0 /* main.swift */; };
@@ -85,10 +113,34 @@
 		2A9222841F387B1D00A648E6 /* TheCloudLockTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheCloudLockTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		2ABEE6D31F38828A00531205 /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		2ABEE6D51F3886D700531205 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		2F15FBE223DD1CE3000F5184 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		2F15FBE623DD36E3000F5184 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		2F15FBE923DDEF20000F5184 /* CredentialsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWorker.swift; sourceTree = "<group>"; };
+		2F15FBEB23DDF27A000F5184 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		2F15FBED23DE066F000F5184 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		2F15FBEF23DE066F000F5184 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		2F15FBF023DE066F000F5184 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		2F15FBF123DE066F000F5184 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		2F15FBF223DE066F000F5184 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		2F15FBFD23DE1A18000F5184 /* DetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableView.swift; sourceTree = "<group>"; };
+		2F15FBFF23DE1D6F000F5184 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		2F15FC0E23DE4DC6000F5184 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
+		2F15FC0F23DE4DC6000F5184 /* ListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		2F15FC1123DE4DC6000F5184 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		2F15FC1823DE9D23000F5184 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		2F15FC1923DE9D23000F5184 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		2F15FC1B23DE9D23000F5184 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		2F15FC2023DEA0CD000F5184 /* CloudLockAPIDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPIDummy.swift; sourceTree = "<group>"; };
+		2F15FC2223DF11DD000F5184 /* ListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorkerTests.swift; sourceTree = "<group>"; };
+		2F15FC2423DF13C2000F5184 /* CloudLockAPISpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPISpy.swift; sourceTree = "<group>"; };
+		2F15FC2623DF166F000F5184 /* CloudLockAPIFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPIFake.swift; sourceTree = "<group>"; };
+		2F15FC2823DF17C9000F5184 /* DetailWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkerTests.swift; sourceTree = "<group>"; };
+		2F15FC2D23DF1CE9000F5184 /* ResponseMockSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMockSpy.swift; sourceTree = "<group>"; };
+		2F15FC2F23DF21BD000F5184 /* StateTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewTests.swift; sourceTree = "<group>"; };
 		2F24825923D3D4D40043F5EE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2F24825B23D3D8DD0043F5EE /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		2F24825F23D3DD4A0043F5EE /* UnlockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPresenter.swift; sourceTree = "<group>"; };
-		2F24826023D3DD4A0043F5EE /* UnlockWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockWorker.swift; sourceTree = "<group>"; };
+		2F24826023D3DD4A0043F5EE /* DoorsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWorker.swift; sourceTree = "<group>"; };
 		2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRouter.swift; sourceTree = "<group>"; };
 		2F24826223D3DD4A0043F5EE /* UnlockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockModels.swift; sourceTree = "<group>"; };
 		2F24826323D3DD4A0043F5EE /* UnlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockController.swift; sourceTree = "<group>"; };
@@ -98,15 +150,15 @@
 		2F24827223D3F4EC0043F5EE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2F24827523D4A3100043F5EE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2F24827D23D518810043F5EE /* DoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
-		2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUnlockView.swift; sourceTree = "<group>"; };
+		2F24827F23D518A60043F5EE /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewStateLogic.swift; sourceTree = "<group>"; };
 		2F24828323D52C8D0043F5EE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewControllerTests.swift; sourceTree = "<group>"; };
 		2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockInteractorTests.swift; sourceTree = "<group>"; };
-		2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockWorkerTests.swift; sourceTree = "<group>"; };
+		2F24828A23D7522E0043F5EE /* DoorsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWorkerTests.swift; sourceTree = "<group>"; };
 		2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPresenterTests.swift; sourceTree = "<group>"; };
 		2F24829023D784090043F5EE /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
-		2F24829623D8B3140043F5EE /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+		2F24829623D8B3140043F5EE /* Doors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
 		2F24829923D8B72B0043F5EE /* CloudLockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPI.swift; sourceTree = "<group>"; };
 		2F24829F23D8FBB40043F5EE /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		2F2482A523D9ECEC0043F5EE /* CloudLockResult+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudLockResult+.swift"; sourceTree = "<group>"; };
@@ -115,12 +167,16 @@
 		2FBFB99223DA10150015AF42 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		2FBFB99523DA410F0015AF42 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		2FBFB99723DA70F30015AF42 /* StateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
-		2FBFB99A23DB2FE60015AF42 /* DoorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsPresenter.swift; sourceTree = "<group>"; };
-		2FBFB99B23DB2FE60015AF42 /* DoorsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWorker.swift; sourceTree = "<group>"; };
-		2FBFB99C23DB2FE60015AF42 /* DoorsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsRouter.swift; sourceTree = "<group>"; };
-		2FBFB99D23DB2FE60015AF42 /* DoorsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsModels.swift; sourceTree = "<group>"; };
-		2FBFB99E23DB2FE60015AF42 /* DoorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
-		2FBFB99F23DB2FE60015AF42 /* DoorsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsInteractor.swift; sourceTree = "<group>"; };
+		2FBFB9A923DB87420015AF42 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		2FBFB9AA23DB87420015AF42 /* ListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorker.swift; sourceTree = "<group>"; };
+		2FBFB9AB23DB87420015AF42 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		2FBFB9AC23DB87420015AF42 /* ListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModels.swift; sourceTree = "<group>"; };
+		2FBFB9AD23DB87420015AF42 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		2FBFB9AE23DB87420015AF42 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		2FBFB9BE23DCB0030015AF42 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2FBFB9C023DCB55D0015AF42 /* ListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableView.swift; sourceTree = "<group>"; };
+		2FBFB9C423DCF8870015AF42 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		2FBFB9C623DCFACE0015AF42 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		553FC23B214047CB001D9362 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55F50BE321404BDD00FAC039 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		582550F0B19592CD8943D97A /* Pods-TheCloudLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCloudLock.release.xcconfig"; path = "Target Support Files/Pods-TheCloudLock/Pods-TheCloudLock.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +250,7 @@
 				2F24829823D8B71D0043F5EE /* Services */,
 				2F24829223D8AA2D0043F5EE /* Workers */,
 				2AB31D9F1F38741400B7D1F3 /* Scenes */,
+				2F15FBFB23DE0F72000F5184 /* ReusableViews */,
 				2AFB310A1F385A20009C4586 /* Helpers */,
 				2AB31D9E1F38740A00B7D1F3 /* Shared */,
 			);
@@ -203,8 +260,11 @@
 		2A1E774A1F384BFD006C84D4 /* TheCloudLockTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F15FC2C23DF1B83000F5184 /* UtilityTests */,
 				2F24829023D784090043F5EE /* Seeds.swift */,
 				2F2482A423D9ECC40043F5EE /* Extensions */,
+				2F15FBFC23DE10EF000F5184 /* Workers */,
+				2F15FC1623DE503D000F5184 /* Helpers */,
 				2F24828523D5FE920043F5EE /* Scenes */,
 				2A9222841F387B1D00A648E6 /* TheCloudLockTests-Bridging-Header.h */,
 				2A1E774D1F384BFD006C84D4 /* Info.plist */,
@@ -224,7 +284,8 @@
 		2AB31D9F1F38741400B7D1F3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2FBFB99923DB2FA50015AF42 /* Doors */,
+				2F15FBE823DDE22F000F5184 /* Detail */,
+				2FBFB99923DB2FA50015AF42 /* List */,
 				2F24826D23D3DF030043F5EE /* Unlock */,
 				2A1DD4E21F38A09700712195 /* Launch */,
 			);
@@ -270,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				2F24828323D52C8D0043F5EE /* UIColor+.swift */,
+				2F15FBE623DD36E3000F5184 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +374,81 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2F15FBE823DDE22F000F5184 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2F15FBFF23DE1D6F000F5184 /* DetailWorker.swift */,
+				2F15FBED23DE066F000F5184 /* DetailPresenter.swift */,
+				2F15FBEF23DE066F000F5184 /* DetailRouter.swift */,
+				2F15FBF023DE066F000F5184 /* DetailModels.swift */,
+				2F15FBF123DE066F000F5184 /* DetailController.swift */,
+				2F15FBF223DE066F000F5184 /* DetailInteractor.swift */,
+				2F15FBFD23DE1A18000F5184 /* DetailTableView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		2F15FBFB23DE0F72000F5184 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				2FBFB9C623DCFACE0015AF42 /* ListTableViewCell.swift */,
+				2FBFB9C023DCB55D0015AF42 /* ListTableView.swift */,
+				2F24827F23D518A60043F5EE /* CustomLoadingView.swift */,
+				2FBFB99223DA10150015AF42 /* ResultView.swift */,
+				2FBFB99523DA410F0015AF42 /* ErrorView.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		2F15FBFC23DE10EF000F5184 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2F24828A23D7522E0043F5EE /* DoorsWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2F15FC0123DE4D12000F5184 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2F15FC0E23DE4DC6000F5184 /* ListViewControllerTests.swift */,
+				2F15FC0F23DE4DC6000F5184 /* ListInteractorTests.swift */,
+				2F15FC1123DE4DC6000F5184 /* ListPresenterTests.swift */,
+				2F15FC2223DF11DD000F5184 /* ListWorkerTests.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		2F15FC1623DE503D000F5184 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F15FC2023DEA0CD000F5184 /* CloudLockAPIDummy.swift */,
+				2F15FC2423DF13C2000F5184 /* CloudLockAPISpy.swift */,
+				2F15FC2623DF166F000F5184 /* CloudLockAPIFake.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2F15FC1723DE9CF0000F5184 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2F15FC1823DE9D23000F5184 /* DetailViewControllerTests.swift */,
+				2F15FC1923DE9D23000F5184 /* DetailInteractorTests.swift */,
+				2F15FC1B23DE9D23000F5184 /* DetailPresenterTests.swift */,
+				2F15FC2823DF17C9000F5184 /* DetailWorkerTests.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		2F15FC2C23DF1B83000F5184 /* UtilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F15FC2D23DF1CE9000F5184 /* ResponseMockSpy.swift */,
+				2F15FC2F23DF21BD000F5184 /* StateTableViewTests.swift */,
+			);
+			path = UtilityTests;
+			sourceTree = "<group>";
+		};
 		2F24826D23D3DF030043F5EE /* Unlock */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,9 +469,6 @@
 				2F2482A723D9EFB40043F5EE /* UnlockViewEventsLogic.swift */,
 				2F24826E23D3E15A0043F5EE /* UnlockView.swift */,
 				2F24827D23D518810043F5EE /* DoorView.swift */,
-				2F24827F23D518A60043F5EE /* LoadingUnlockView.swift */,
-				2FBFB99223DA10150015AF42 /* ResultView.swift */,
-				2FBFB99523DA410F0015AF42 /* ErrorView.swift */,
 			);
 			path = UnlockViews;
 			sourceTree = "<group>";
@@ -342,6 +476,8 @@
 		2F24828523D5FE920043F5EE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2F15FC1723DE9CF0000F5184 /* Detail */,
+				2F15FC0123DE4D12000F5184 /* List */,
 				2F24828623D5FEC20043F5EE /* Unlock */,
 			);
 			path = Scenes;
@@ -352,7 +488,6 @@
 			children = (
 				2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */,
 				2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */,
-				2F24828A23D7522E0043F5EE /* UnlockWorkerTests.swift */,
 				2F24828B23D7522E0043F5EE /* UnlockPresenterTests.swift */,
 			);
 			path = Unlock;
@@ -361,7 +496,8 @@
 		2F24829223D8AA2D0043F5EE /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				2F24826023D3DD4A0043F5EE /* UnlockWorker.swift */,
+				2F24826023D3DD4A0043F5EE /* DoorsWorker.swift */,
+				2F15FBE923DDEF20000F5184 /* CredentialsWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -369,8 +505,11 @@
 		2F24829523D8B3020043F5EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2F24829623D8B3140043F5EE /* Door.swift */,
+				2F24829623D8B3140043F5EE /* Doors.swift */,
 				2FBFB98F23D9FFFD0015AF42 /* Status.swift */,
+				2FBFB9C423DCF8870015AF42 /* Users.swift */,
+				2FBFB9BE23DCB0030015AF42 /* Item.swift */,
+				2F15FBEB23DDF27A000F5184 /* Credential.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				2F24829923D8B72B0043F5EE /* CloudLockAPI.swift */,
+				2F15FBE223DD1CE3000F5184 /* Responses.swift */,
 				2F24829523D8B3020043F5EE /* Models */,
 			);
 			path = Services;
@@ -404,17 +544,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2FBFB99923DB2FA50015AF42 /* Doors */ = {
+		2FBFB99923DB2FA50015AF42 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				2FBFB99A23DB2FE60015AF42 /* DoorsPresenter.swift */,
-				2FBFB99B23DB2FE60015AF42 /* DoorsWorker.swift */,
-				2FBFB99C23DB2FE60015AF42 /* DoorsRouter.swift */,
-				2FBFB99D23DB2FE60015AF42 /* DoorsModels.swift */,
-				2FBFB99E23DB2FE60015AF42 /* DoorsViewController.swift */,
-				2FBFB99F23DB2FE60015AF42 /* DoorsInteractor.swift */,
+				2FBFB9A923DB87420015AF42 /* ListPresenter.swift */,
+				2FBFB9AA23DB87420015AF42 /* ListWorker.swift */,
+				2FBFB9AB23DB87420015AF42 /* ListRouter.swift */,
+				2FBFB9AC23DB87420015AF42 /* ListModels.swift */,
+				2FBFB9AD23DB87420015AF42 /* ListController.swift */,
+				2FBFB9AE23DB87420015AF42 /* ListInteractor.swift */,
 			);
-			path = Doors;
+			path = List;
 			sourceTree = "<group>";
 		};
 		3DAE3D4A5C84DAF4F1EF7AD3 /* Frameworks */ = {
@@ -685,44 +825,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBFB9B323DB87420015AF42 /* ListController.swift in Sources */,
 				2F24825A23D3D4D40043F5EE /* BaseNavigationController.swift in Sources */,
 				2A9222821F38797600A648E6 /* ConfigurationManager.swift in Sources */,
 				2F24825C23D3D8DD0043F5EE /* BaseTabbarController.swift in Sources */,
+				2FBFB9B223DB87420015AF42 /* ListModels.swift in Sources */,
 				2ABEE6D61F3886D700531205 /* RootRouter.swift in Sources */,
+				2FBFB9B423DB87420015AF42 /* ListInteractor.swift in Sources */,
+				2FBFB9BF23DCB0030015AF42 /* Item.swift in Sources */,
 				2F24826523D3DD4A0043F5EE /* UnlockPresenter.swift in Sources */,
 				2F24827623D4A3100043F5EE /* BaseViewController.swift in Sources */,
 				C90395241FC622D2006F1DC0 /* main.swift in Sources */,
-				2FBFB9A423DB2FE60015AF42 /* DoorsViewController.swift in Sources */,
-				2FBFB9A523DB2FE60015AF42 /* DoorsInteractor.swift in Sources */,
 				2FBFB99623DA410F0015AF42 /* ErrorView.swift in Sources */,
+				2F15FC0023DE1D6F000F5184 /* DetailWorker.swift in Sources */,
+				2FBFB9B123DB87420015AF42 /* ListRouter.swift in Sources */,
+				2F15FBF323DE066F000F5184 /* DetailPresenter.swift in Sources */,
+				2FBFB9C123DCB55D0015AF42 /* ListTableView.swift in Sources */,
+				2F15FBE723DD36E3000F5184 /* UIViewController.swift in Sources */,
+				2FBFB9C523DCF8870015AF42 /* Users.swift in Sources */,
+				2F15FBF723DE066F000F5184 /* DetailController.swift in Sources */,
 				2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */,
-				2F24829723D8B3140043F5EE /* Door.swift in Sources */,
-				2F24828023D518A60043F5EE /* LoadingUnlockView.swift in Sources */,
+				2F24829723D8B3140043F5EE /* Doors.swift in Sources */,
+				2F24828023D518A60043F5EE /* CustomLoadingView.swift in Sources */,
 				2FBFB99823DA70F30015AF42 /* StateTableViewController.swift in Sources */,
 				2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */,
 				2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */,
 				2F24826F23D3E15A0043F5EE /* UnlockView.swift in Sources */,
-				2FBFB9A323DB2FE60015AF42 /* DoorsModels.swift in Sources */,
 				553FC23C214047CB001D9362 /* R.generated.swift in Sources */,
 				2F24826A23D3DD4A0043F5EE /* UnlockInteractor.swift in Sources */,
 				2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */,
+				2F15FBF623DE066F000F5184 /* DetailModels.swift in Sources */,
+				2F15FBEC23DDF27A000F5184 /* Credential.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
+				2FBFB9AF23DB87420015AF42 /* ListPresenter.swift in Sources */,
 				2F24826723D3DD4A0043F5EE /* UnlockRouter.swift in Sources */,
 				2FBFB99023D9FFFD0015AF42 /* Status.swift in Sources */,
 				2F24827123D3F3CB0043F5EE /* ViewCode.swift in Sources */,
-				2FBFB9A223DB2FE60015AF42 /* DoorsRouter.swift in Sources */,
 				2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */,
-				2FBFB9A123DB2FE60015AF42 /* DoorsWorker.swift in Sources */,
 				2A1DD4DF1F389C2200712195 /* DeeplinkHandler.swift in Sources */,
 				2FBFB99323DA10150015AF42 /* ResultView.swift in Sources */,
 				2F24826923D3DD4A0043F5EE /* UnlockController.swift in Sources */,
 				2F2482A023D8FBB40043F5EE /* Identifiable.swift in Sources */,
+				2FBFB9C723DCFACE0015AF42 /* ListTableViewCell.swift in Sources */,
 				2F24827E23D518810043F5EE /* DoorView.swift in Sources */,
+				2F15FBFE23DE1A18000F5184 /* DetailTableView.swift in Sources */,
 				2F2482A823D9EFB40043F5EE /* UnlockViewEventsLogic.swift in Sources */,
-				2F24826623D3DD4A0043F5EE /* UnlockWorker.swift in Sources */,
+				2F15FBE323DD1CE3000F5184 /* Responses.swift in Sources */,
+				2F24826623D3DD4A0043F5EE /* DoorsWorker.swift in Sources */,
 				2F24826823D3DD4A0043F5EE /* UnlockModels.swift in Sources */,
-				2FBFB9A023DB2FE60015AF42 /* DoorsPresenter.swift in Sources */,
+				2F15FBF823DE066F000F5184 /* DetailInteractor.swift in Sources */,
+				2F15FBEA23DDEF20000F5184 /* CredentialsWorker.swift in Sources */,
 				2F24829A23D8B72C0043F5EE /* CloudLockAPI.swift in Sources */,
+				2F15FBF523DE066F000F5184 /* DetailRouter.swift in Sources */,
+				2FBFB9B023DB87420015AF42 /* ListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,13 +885,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F15FC2323DF11DD000F5184 /* ListWorkerTests.swift in Sources */,
 				2F24828D23D7522E0043F5EE /* UnlockInteractorTests.swift in Sources */,
 				2F24828C23D7522E0043F5EE /* UnlockViewControllerTests.swift in Sources */,
+				2F15FC2E23DF1CE9000F5184 /* ResponseMockSpy.swift in Sources */,
+				2F15FC2723DF166F000F5184 /* CloudLockAPIFake.swift in Sources */,
 				2F24829123D784090043F5EE /* Seeds.swift in Sources */,
 				C90395261FC62399006F1DC0 /* TestsAppDelegate.swift in Sources */,
-				2F24828E23D7522E0043F5EE /* UnlockWorkerTests.swift in Sources */,
+				2F15FC2523DF13C2000F5184 /* CloudLockAPISpy.swift in Sources */,
+				2F24828E23D7522E0043F5EE /* DoorsWorkerTests.swift in Sources */,
+				2F15FC1523DE4DC6000F5184 /* ListPresenterTests.swift in Sources */,
+				2F15FC2123DEA0CD000F5184 /* CloudLockAPIDummy.swift in Sources */,
+				2F15FC3023DF21BE000F5184 /* StateTableViewTests.swift in Sources */,
 				2F24828F23D7522E0043F5EE /* UnlockPresenterTests.swift in Sources */,
+				2F15FC1223DE4DC6000F5184 /* ListViewControllerTests.swift in Sources */,
+				2F15FC1C23DE9D23000F5184 /* DetailViewControllerTests.swift in Sources */,
+				2F15FC1F23DE9D23000F5184 /* DetailPresenterTests.swift in Sources */,
+				2F15FC1323DE4DC6000F5184 /* ListInteractorTests.swift in Sources */,
 				2F2482A623D9ECEC0043F5EE /* CloudLockResult+.swift in Sources */,
+				2F15FC2923DF17C9000F5184 /* DetailWorkerTests.swift in Sources */,
+				2F15FC1D23DE9D23000F5184 /* DetailInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

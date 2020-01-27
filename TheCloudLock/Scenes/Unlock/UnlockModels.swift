@@ -19,7 +19,7 @@ enum Unlock {
         struct Request {}
         
         struct Response {
-            let doors: [Door]?
+            let doors: [Doors]?
             let error: CloudLockError?
         }
         

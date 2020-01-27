@@ -29,7 +29,7 @@ class UnlockController: Controller {
     
     private var viewState: Unlock.State = .loading(nil)
     
-    // MARK: View lifecycle
+    // MARK: Object lifecycle
 
     override func loadView() {
         self.view = viewLogic
