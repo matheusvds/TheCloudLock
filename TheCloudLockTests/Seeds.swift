@@ -22,4 +22,17 @@ struct Seeds {
         static let hallway = DisplayedCredentialItem(name: "Hallway", active: false)
         static let room = DisplayedCredentialItem(name: "Room", active: true)
     }
+    
+    struct Response {
+        static let fetchItemResponse =
+        """
+        [
+           {
+              "id":"0",
+              "name":"Living Room",
+              "image":"livingroom"
+           }
+        ]
+        """
+    }
 }
