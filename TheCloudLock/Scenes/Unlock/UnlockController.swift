@@ -61,13 +61,13 @@ class UnlockController: Controller {
     // MARK: Helper Methods
     
     private func fetchDoors() {
-        startLoading(with: "Searching nearest door")
+        startLoading(with: R.string.localizable.searchingNearestDoor())
         let request = Unlock.FetchDoors.Request()
         interactor?.fetchDoors(request: request)
     }
     
     private func unlockDoor() {
-        startLoading(with: "Unlocking...")
+        startLoading(with: R.string.localizable.unlocking())
         let request = Unlock.UnlockDoor.Request()
         interactor?.unlockDoor(request: request)
     }

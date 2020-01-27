@@ -13,7 +13,7 @@ class ResultView: View {
     
     lazy var centerText: UILabel = {
         let label = UILabel()
-        label.text = "Unlocked! You're free to go!"
+        label.text = R.string.localizable.unlockedFree()
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = .black
         label.textAlignment = .center
@@ -23,7 +23,7 @@ class ResultView: View {
     
     lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Back", for: .normal)
+        button.setTitle(R.string.localizable.commonBack(), for: .normal)
         button.setTitleColor(.darkPurple, for: .highlighted)
         button.backgroundColor = .lightPurple
         button.layer.cornerRadius = 18

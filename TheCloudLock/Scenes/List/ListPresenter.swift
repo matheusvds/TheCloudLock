@@ -51,11 +51,11 @@ class ListPresenter: ListPresentationLogic {
         switch error {
             
         case .cannotFetchItems:
-            return "We could not find any items 😰"
+            return R.string.localizable.cantFindItemsError()
         case .cannotFetchCredentials:
-            return "There's something wrong 😰"
+            return R.string.localizable.somethingWrong()
         default:
-            return "Unkown error 🤯"
+            return R.string.localizable.unkownError()
         }
     }
 }

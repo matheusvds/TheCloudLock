@@ -19,7 +19,9 @@ extension UIViewController {
         loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating()
 
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil,
+                                      message: R.string.localizable.pleaseWait(),
+                                      preferredStyle: .alert)
         alert.view.addSubview(loadingIndicator)
         navigationController?.present(alert, animated: true, completion: nil)
     }
@@ -40,7 +42,7 @@ extension UIViewController {
         )
         
         alert.addAction(
-            UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            UIAlertAction(title: R.string.localizable.commonOk(), style: .default, handler: { _ in
                 handler?()
             })
         )

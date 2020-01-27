@@ -13,7 +13,6 @@ class ErrorView: View {
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "No door found 😢"
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .black
         label.textAlignment = .center
@@ -23,7 +22,7 @@ class ErrorView: View {
     
     lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Back", for: .normal)
+        button.setTitle(R.string.localizable.commonBack(), for: .normal)
         button.setTitleColor(.darkPurple, for: .highlighted)
         button.backgroundColor = .lightPurple
         button.layer.cornerRadius = 18

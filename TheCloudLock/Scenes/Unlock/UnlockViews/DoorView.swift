@@ -29,7 +29,7 @@ class DoorView: View {
     
     lazy var unlockButton: UIButton = {
         let button = UIButton()
-        button.setTitle("let's unlock it!", for: .normal)
+        button.setTitle(R.string.localizable.letsUnlockIt(), for: .normal)
         button.setTitleColor(.darkPurple, for: .highlighted)
         button.backgroundColor = .lightPurple
         button.layer.cornerRadius = 18

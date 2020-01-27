@@ -5,13 +5,34 @@
   Copyright © AppCompany. All rights reserved.
 */
 
-// MARK: Common
+// MARK: - Common
 
 "common.ok" = "Ok";
 "common.cancel" = "Cancel";
+"common.add" = "Add";
 "common.error" = "Error";
+"common.back" = "Back";
+"common.save" = "save";
+"common.success" = "success";
 
-// MARK: UnlockScene
 
-"doorView.button.name" = "let's unlock it!";
-"loadingView.label.name" = "Searching nearest door";
+// MARK: - Phrases
+
+"data.saved" = "Data saved! 🤖";
+"type.name.here" = "Type the name here";
+"unlocked.free" = "Unlocked! You're free to go!";
+"searching.nearest.door" = "Searching nearest door";
+"unlocking" = "Unlocking...";
+"lets.unlock.it" = "Let's unlock it!";
+"nothing.here" = "Nothing here";
+"please.wait" = "Please wait...";
+
+// MARK: - Errors
+
+"something.wrong" = "There's something wrong 😰";
+"error.while.saving" = "An error occurred while saving 😭";
+"unkown.error" = "Unkown error 🤯";
+"cant.find.items.error" = "We could not find any items 😰";
+"cant.find.doors.error" = "We could not find any doors 😢";
+"error.while.unlocking" = "An error ocurred while unlocking 🔑";
+"have.permission.error" = "Do you have permission? 🕵️‍♂️";

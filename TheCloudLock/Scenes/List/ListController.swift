@@ -151,7 +151,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         alert.addTextField { textField in
             textField.becomeFirstResponder()
             textField.textColor = .black
-            textField.placeholder = "Type the name here"
+            textField.placeholder = R.string.localizable.typeNameHere()
             textField.backgroundColor = nil
             textField.keyboardAppearance = .default
             textField.keyboardType = .default
@@ -159,7 +159,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         }
         
         alert.addAction(
-            UIAlertAction(title: "Add", style: .default, handler: { _ in
+            UIAlertAction(title: R.string.localizable.commonAdd(), style: .default, handler: { _ in
                 if let text = alert.textFields?.first?.text {
                     self.addNewItem(with: text)
                 }
@@ -167,14 +167,14 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         )
         
         alert.addAction(
-            UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            UIAlertAction(title: R.string.localizable.commonCancel(), style: .cancel, handler: nil)
         )
         
         present(alert, animated: true, completion: nil)
     }
     
     private func showErrorAlert(with message: String, handler: (() -> Void)? = nil) {
-        showAlert(title: "Error", message: message, handler: handler)
+        showAlert(title: R.string.localizable.commonError(), message: message, handler: handler)
     }
     
 }

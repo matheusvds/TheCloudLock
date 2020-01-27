@@ -62,7 +62,9 @@ class ListTableView: UITableView {
     
     private func addEmptyState() {
         if numberOfRows(inSection: 0) == 0 {
-            emptyView.text = "Nothing here \(["🙈", "🙉", "🙊"].shuffled()[0])"
+            let message = R.string.localizable.nothingHere()
+            let emoticon = ["🙈", "🙉", "🙊"].shuffled()[0]
+            emptyView.text = "\(message) \(emoticon)"
             emptyView.isHidden = false
             return
         }

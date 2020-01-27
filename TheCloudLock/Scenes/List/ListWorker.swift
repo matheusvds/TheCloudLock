@@ -42,10 +42,10 @@ class ListWorker {
         
         // MARK: - Remove
         if row != .none {
-            switch type.entityName {
-            case "Doors":
+            switch type.entityName.lowercased() {
+            case let name where name.contains("door"):
                 Responses.fetchItemsRemoveDoorsSuccess()
-            case "Users":
+            case let name where name.contains("user"):
                 Responses.fetchItemsRemoveUsersSuccess()
             default:
                 FakeServer.json = nil
@@ -56,10 +56,10 @@ class ListWorker {
         
         // MARK: - Add
         if name != .none {
-            switch type.entityName {
-            case "Doors":
+            switch type.entityName.lowercased() {
+            case let name where name.contains("door"):
                 Responses.fetchItemsAddDoorsSuccess()
-            case "Users":
+            case let name where name.contains("user"):
                 Responses.fetchItemsAddUsersSuccess()
             default:
                 FakeServer.json = nil
@@ -68,5 +68,4 @@ class ListWorker {
         
         FakeServer.setServer(type: type)
     }
-    
 }

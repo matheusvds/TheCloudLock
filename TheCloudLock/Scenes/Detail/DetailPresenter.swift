@@ -58,11 +58,11 @@ class DetailPresenter: DetailPresentationLogic {
         switch error {
             
         case .cannotFetchCredentials:
-            return "There's something wrong 😰"
+            return R.string.localizable.somethingWrong()
         case .cannotSaveCredentials:
-            return "An error occurred while saving 😭"
+            return R.string.localizable.errorWhileSaving()
         default:
-            return "Unkown error 🤯"
+            return R.string.localizable.unkownError()
         }
     }
 }

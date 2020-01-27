@@ -64,7 +64,7 @@ class DetailController<T: Item>: Controller, DetailDisplayLogic, UITableViewDele
     }
     
     private func setSaveButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.commonSave(),
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(saveCredentials))
@@ -126,13 +126,15 @@ extension DetailController {
     func displaySaveCredentials(viewModel: Detail.SaveCredentials.ViewModel) {
         dissmissLoading {
             if viewModel.resultMessage.isEmpty {
-                self.showAlert(title: "Success", message: "Data saved! 🤖") {
+                self.showAlert(title: R.string.localizable.commonSuccess(),
+                               message: R.string.localizable.dataSaved()) {
                     self.dismiss(animated: true, completion: nil)
                 }
                 return
             }
             
-            self.showAlert(title: "Error", message: viewModel.resultMessage)
+            self.showAlert(title: R.string.localizable.commonError(),
+                           message: viewModel.resultMessage)
         }
     }
 }

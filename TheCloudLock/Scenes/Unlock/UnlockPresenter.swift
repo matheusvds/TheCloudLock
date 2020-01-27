@@ -66,7 +66,7 @@ class UnlockPresenter: UnlockPresentationLogic {
     private func getSuccessMessage(from response: Unlock.UnlockDoor.Response) -> String {
         switch getState(from: response) {
         case .unlockDoorSucess:
-            return "Unlocked! You're free to go!"
+            return R.string.localizable.unlockedFree()
         default:
             return String()
         }
@@ -130,13 +130,13 @@ class UnlockPresenter: UnlockPresentationLogic {
         switch error {
             
         case .cannotFetch:
-            return "We could not find any doors 😢"
+            return R.string.localizable.cantFindDoorsError()
         case .cannotUnlock:
-            return "An error ocurred while unlocking 🔑"
+            return R.string.localizable.errorWhileUnlocking()
         case .permissionDenied:
-            return "Do you have permission? 🕵️‍♂️"
+            return R.string.localizable.havePermissionError()
         default:
-            return "Error"
+            return R.string.localizable.commonError()
         }
     }
 }
