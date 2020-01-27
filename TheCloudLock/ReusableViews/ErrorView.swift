@@ -9,7 +9,6 @@
 import SnapKit
 import UIKit
 
-
 /// ErrorView is a View used to display custom view errors
 class ErrorView: View {
     

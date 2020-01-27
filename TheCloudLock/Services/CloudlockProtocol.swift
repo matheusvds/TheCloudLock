@@ -17,15 +17,13 @@ protocol CloudLockProtocol {
     ///   - type: Generic paramater that defines the model to be parsed
     ///   - completion: Callback with the result
     func fetchItems<T: Codable>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void)
-    
-    
+        
     /// Fetches credentials for item with specific type
     /// - Parameters:
     ///   - type: Generic parameter that defines the model to be parsed
     ///   - completion: Callback with the result
     func fetchItemCredentials<T: Codable>(type: T.Type, completion: @escaping (CloudLockResult<T>) -> Void)
-    
-    
+        
     /// Saves credentials for item with specific type
     /// - Parameters:
     ///   - type: Generic parameter that defines the model to be parsed
@@ -35,8 +33,7 @@ protocol CloudLockProtocol {
     /// Fetches nearst doors
     /// - Parameter completion: Callback with the operation result
     func fetchDoors(completion: @escaping FetchDoorsCompletionHandler)
-    
-    
+        
     /// Unlocks a door with a specific ID.
     /// - Parameters:
     ///   - doorID: Id from the door to be unlocked

@@ -35,7 +35,6 @@ class FakeServer: Server {
         }
     }
     
-    
     /// Sets the correct response kind according to the model's type
     /// - Parameter type: Generic type used to set the response
     static func setServer<T: Item>(type: T.Type) {
