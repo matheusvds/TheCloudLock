@@ -11,11 +11,11 @@ import XCTest
 
 class CloudLockAPITests: XCTestCase {
     
-    // MARK:-  Subject under test
+    // MARK: - Subject under test
     
     var sut: CloudLockAPI!
     
-    // MARK:-  Test lifecycle
+    // MARK: - Test lifecycle
     
     override func setUp() {
         super.setUp()

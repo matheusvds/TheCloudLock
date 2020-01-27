@@ -11,7 +11,7 @@ import UserNotifications
 
 class NotificationsHandler: NSObject {
 
-    // MARK: Public methods
+    // MARK: - Public methods
 
     func configure() {
         UNUserNotificationCenter.current().delegate = self

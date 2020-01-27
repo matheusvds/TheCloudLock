@@ -20,12 +20,14 @@ protocol DetailPresentationLogic {
 class DetailPresenter: DetailPresentationLogic {
     weak var viewController: DetailDisplayLogic?
     
-    // MARK: Do something
+    // MARK: - Present Credentials
     
     func presentCredentials(response: Detail.FetchItemCredentials.Response) {
         let viewModel = format(response: response)
         viewController?.displayCredentials(viewModel: viewModel)
     }
+    
+    // MARK: - Save Credentials
     
     func presentSaveCredentials(response: Detail.SaveCredentials.Response) {
         let viewModel = Detail.SaveCredentials.ViewModel(resultMessage: getErrorMessage(from: response.error))

@@ -13,7 +13,7 @@
 import UIKit
 
 enum Unlock {
-    // MARK: Use cases
+    // MARK: - Use cases
     enum FetchDoors {
         
         struct Request {}

@@ -403,7 +403,7 @@ struct Responses: ResponsesMock {
     static let saveDoorCrendentialsResponse = statusResponse(code: 200)
     static let saveDoorCredentialsResponseError = statusResponse(code: 204)
     
-        // MARK: User Details
+        // MARK: - User Details
     
     static let saveUserCrendentialsResponse = statusResponse(code: 200)
     static let saveUserCredentialsResponseError = statusResponse(code: 204)

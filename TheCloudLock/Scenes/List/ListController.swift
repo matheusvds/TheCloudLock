@@ -19,7 +19,7 @@ protocol ListDisplayLogic: class {
 
 class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDelegate {
     
-    // MARK: VIP Cycle
+    // MARK: - VIP Cycle
     
     var interactor: ListBusinessLogic?
     var router: (NSObjectProtocol & ListRoutingLogic & ListDataPassing)?
@@ -41,7 +41,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         }
     }
     
-    // MARK: Object lifecycle
+    // MARK: - Object lifecycle
     
     override func loadView() {
         self.view = tableView
@@ -50,7 +50,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     override func setTitle() {
         self.title = T.entityName
     }
-    // MARK: Setup
+    // MARK: - Setup
     
     override func setup() {
         let viewController = self
@@ -179,9 +179,25 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     
 }
 
-// MARK: ListDisplayLogic
+// MARK: - ListDisplayLogic
 
 extension ListController: ListDisplayLogic {
+    
+    // MARK: - Diplay Fetched Items
+    
+    func displayFetchedItems(viewModel: List.FetchItems.ViewModel) {
+        if !viewModel.resultMessage.isEmpty {
+            self.display(state: .ready)
+            showErrorAlert(with: viewModel.resultMessage)
+            return
+        }
+        
+        items = viewModel.items
+        display(state: .ready)
+    }
+    
+    // MARK: - Diplay Fetched Credentials
+    
     func displayFetchedCredentials(viewModel: List.FetchItemCredentials.ViewModel) {
         if !viewModel.resultMessage.isEmpty {
             self.display(state: .ready) {
@@ -194,20 +210,9 @@ extension ListController: ListDisplayLogic {
             self.router?.routeToDetails(type: T.self)
         }
     }
-    
-    func displayFetchedItems(viewModel: List.FetchItems.ViewModel) {
-        if !viewModel.resultMessage.isEmpty {
-            self.display(state: .ready)
-            showErrorAlert(with: viewModel.resultMessage)
-            return
-        }
-        
-        items = viewModel.items
-        display(state: .ready)
-    }
 }
 
-// MARK: StateHandler
+// MARK: - StateHandler
 
 extension ListController {
     private func display(state: List.State, completion: (() -> Void)? = nil) {

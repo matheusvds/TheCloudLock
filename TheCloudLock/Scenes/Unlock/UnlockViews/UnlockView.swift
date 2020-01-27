@@ -11,7 +11,7 @@ import UIKit
 
 class UnlockView: ScreenView {
     
-    // MARK: View Elements
+    // MARK: - View Elements
     
     lazy var container: UIView = {
         let view = UIView()
@@ -36,7 +36,7 @@ class UnlockView: ScreenView {
         return view
     }()
     
-    // MARK: View Code
+    // MARK: - View Code
     
     override func setupHierarchy() {
         super.setupHierarchy()

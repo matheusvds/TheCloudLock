@@ -27,7 +27,7 @@ class UnlockInteractor: UnlockDataStore {
     var foundDoors: [Doors]?
 }
 
-// MARK: UnlockBusinessLogic
+// MARK: - UnlockBusinessLogic
 
 extension UnlockInteractor: UnlockBusinessLogic {
 

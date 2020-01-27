@@ -21,13 +21,15 @@ class ListPresenter: ListPresentationLogic {
     
     weak var viewController: ListDisplayLogic?
     
-    // MARK: ListPresentationLogic
+    // MARK: - Present Fetched Items
     
     func presentFetchedItems(response: List.FetchItems.Response) {
         let viewModel = format(response: response)
         viewController?.displayFetchedItems(viewModel: viewModel)
         
     }
+    
+    // MARK: - Present Fetched Credentials
     
     func presentFetchedCredentials(response: List.FetchItemCredentials.Response) {
         let viewModel = List.FetchItemCredentials.ViewModel(resultMessage: getErrorMessage(from: response.error))

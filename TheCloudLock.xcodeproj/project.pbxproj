@@ -42,11 +42,11 @@
 		2F15FC3023DF21BE000F5184 /* StateTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC2F23DF21BD000F5184 /* StateTableViewTests.swift */; };
 		2F15FC3223DF4221000F5184 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC3123DF4221000F5184 /* Server.swift */; };
 		2F15FC3523DF437A000F5184 /* CloudLockAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC3423DF437A000F5184 /* CloudLockAPITests.swift */; };
+		2F15FC3723DF4F7A000F5184 /* UnlockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FC3623DF4F7A000F5184 /* UnlockRouter.swift */; };
 		2F24825A23D3D4D40043F5EE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825923D3D4D40043F5EE /* BaseNavigationController.swift */; };
 		2F24825C23D3D8DD0043F5EE /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825B23D3D8DD0043F5EE /* BaseTabbarController.swift */; };
 		2F24826523D3DD4A0043F5EE /* UnlockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24825F23D3DD4A0043F5EE /* UnlockPresenter.swift */; };
 		2F24826623D3DD4A0043F5EE /* DoorsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826023D3DD4A0043F5EE /* DoorsWorker.swift */; };
-		2F24826723D3DD4A0043F5EE /* UnlockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */; };
 		2F24826823D3DD4A0043F5EE /* UnlockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826223D3DD4A0043F5EE /* UnlockModels.swift */; };
 		2F24826923D3DD4A0043F5EE /* UnlockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826323D3DD4A0043F5EE /* UnlockController.swift */; };
 		2F24826A23D3DD4A0043F5EE /* UnlockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24826423D3DD4A0043F5EE /* UnlockInteractor.swift */; };
@@ -141,11 +141,11 @@
 		2F15FC2F23DF21BD000F5184 /* StateTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewTests.swift; sourceTree = "<group>"; };
 		2F15FC3123DF4221000F5184 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		2F15FC3423DF437A000F5184 /* CloudLockAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLockAPITests.swift; sourceTree = "<group>"; };
+		2F15FC3623DF4F7A000F5184 /* UnlockRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockRouter.swift; sourceTree = "<group>"; };
 		2F24825923D3D4D40043F5EE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2F24825B23D3D8DD0043F5EE /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		2F24825F23D3DD4A0043F5EE /* UnlockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPresenter.swift; sourceTree = "<group>"; };
 		2F24826023D3DD4A0043F5EE /* DoorsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWorker.swift; sourceTree = "<group>"; };
-		2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRouter.swift; sourceTree = "<group>"; };
 		2F24826223D3DD4A0043F5EE /* UnlockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockModels.swift; sourceTree = "<group>"; };
 		2F24826323D3DD4A0043F5EE /* UnlockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockController.swift; sourceTree = "<group>"; };
 		2F24826423D3DD4A0043F5EE /* UnlockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockInteractor.swift; sourceTree = "<group>"; };
@@ -466,8 +466,8 @@
 			isa = PBXGroup;
 			children = (
 				2F24825F23D3DD4A0043F5EE /* UnlockPresenter.swift */,
-				2F24826123D3DD4A0043F5EE /* UnlockRouter.swift */,
 				2F24826223D3DD4A0043F5EE /* UnlockModels.swift */,
+				2F15FC3623DF4F7A000F5184 /* UnlockRouter.swift */,
 				2F24826323D3DD4A0043F5EE /* UnlockController.swift */,
 				2F24826423D3DD4A0043F5EE /* UnlockInteractor.swift */,
 				2F24827C23D518660043F5EE /* UnlockViews */,
@@ -855,6 +855,7 @@
 				2F15FC0023DE1D6F000F5184 /* DetailWorker.swift in Sources */,
 				2FBFB9B123DB87420015AF42 /* ListRouter.swift in Sources */,
 				2F15FBF323DE066F000F5184 /* DetailPresenter.swift in Sources */,
+				2F15FC3723DF4F7A000F5184 /* UnlockRouter.swift in Sources */,
 				2FBFB9C123DCB55D0015AF42 /* ListTableView.swift in Sources */,
 				2F15FBE723DD36E3000F5184 /* UIViewController.swift in Sources */,
 				2FBFB9C523DCF8870015AF42 /* Users.swift in Sources */,
@@ -873,7 +874,6 @@
 				2F15FBEC23DDF27A000F5184 /* Credential.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
 				2FBFB9AF23DB87420015AF42 /* ListPresenter.swift in Sources */,
-				2F24826723D3DD4A0043F5EE /* UnlockRouter.swift in Sources */,
 				2FBFB99023D9FFFD0015AF42 /* Status.swift in Sources */,
 				2F24827123D3F3CB0043F5EE /* ViewCode.swift in Sources */,
 				2A1DD4E11F389E2100712195 /* NotificationsHandler.swift in Sources */,

@@ -13,7 +13,7 @@
 import UIKit
 
 enum List {
-    // MARK: Use cases
+    // MARK: - Use cases
     
     enum FetchItems {
         struct Request {

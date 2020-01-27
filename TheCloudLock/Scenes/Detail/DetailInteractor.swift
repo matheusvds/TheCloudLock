@@ -26,13 +26,16 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
     var credential: Credential?
     var presenter: DetailPresentationLogic?
     var worker: DetailWorker? = DetailWorker(cloudLock: CloudLockAPI())
-    // MARK: Do something
+    
+    // MARK: - Fetch Credentials
     
     func fetchCredentials(request: Detail.FetchItemCredentials.Request) {
 
         let response = Detail.FetchItemCredentials.Response(credential: credential, error: nil)
         presenter?.presentCredentials(response: response)
     }
+    
+    // MARK: - Save Credentials
     
     func saveCredentials<T: Item>(type: T.Type, request: Detail.SaveCredentials.Request) {
         worker?.save(type: type, items: request.items, completion: { result in

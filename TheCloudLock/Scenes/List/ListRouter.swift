@@ -25,7 +25,7 @@ class ListRouter<T: Item>: NSObject, ListRoutingLogic, ListDataPassing {
     weak var viewController: ListController<T>?
     var dataStore: ListDataStore?
     
-    // MARK: Routing
+    // MARK: - Routing
     
     func routeToDetails<T: Item>(type: T.Type) {
         let detailsController = DetailController<T>()
@@ -36,7 +36,7 @@ class ListRouter<T: Item>: NSObject, ListRoutingLogic, ListDataPassing {
         navigateToDetail(destination: detailsController)
     }
     
-    // MARK: Navigation
+    // MARK: - Navigation
     
     func navigateToDetail<T: Item>(destination: DetailController<T>) {
         let nav = BaseNavigationController(rootViewController: destination)

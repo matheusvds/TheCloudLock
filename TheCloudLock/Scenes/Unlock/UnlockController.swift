@@ -19,23 +19,23 @@ protocol UnlockDisplayLogic: class {
 
 class UnlockController: Controller {
     
-    // MARK: VIP Cycle
+    // MARK: - VIP Cycle
     
     var interactor: UnlockBusinessLogic?
     var router: (NSObjectProtocol & UnlockRoutingLogic & UnlockDataPassing)?
     var viewLogic: (UnlockViewStateLogic & UnlockViewEventsLogic)?
     
-    // MARK: Flow Control
+    // MARK: - Flow Control
     
     private var viewState: Unlock.State = .loading(nil)
     
-    // MARK: Object lifecycle
+    // MARK: - Object lifecycle
 
     override func loadView() {
         self.view = viewLogic
     }
     
-    // MARK: Setup
+    // MARK: - Setup
     
     override func setup() {
         let viewController = self
@@ -58,7 +58,7 @@ class UnlockController: Controller {
         fetchDoors()
     }
     
-    // MARK: Helper Methods
+    // MARK: - Helper Methods
     
     private func fetchDoors() {
         startLoading(with: R.string.localizable.searchingNearestDoor())
@@ -86,7 +86,7 @@ class UnlockController: Controller {
         viewLogic?.backButton.removeTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
     
-    // MARK: UI Events
+    // MARK: - UI Events
     
     @objc
     private func unlockButtonTapped() {
@@ -100,7 +100,7 @@ class UnlockController: Controller {
     
 }
 
-// MARK: UnlockDisplayLogic
+// MARK: - UnlockDisplayLogic
 
 extension UnlockController: UnlockDisplayLogic {
     func displayFetchDoors(viewModel: Unlock.FetchDoors.ViewModel) {

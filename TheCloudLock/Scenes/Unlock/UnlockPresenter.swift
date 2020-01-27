@@ -21,19 +21,21 @@ class UnlockPresenter: UnlockPresentationLogic {
     
     weak var viewController: UnlockDisplayLogic?
     
-    // MARK: UnlockPresentationLogic
+    // MARK: - Present Fetch Doors
     
     func presentFetchDoors(response: Unlock.FetchDoors.Response) {
         let viewModel = format(response: response)
         viewController?.displayFetchDoors(viewModel: viewModel)
     }
     
+    // MARK: - Present Unlock Door
+    
     func presentUnlockDoor(response: Unlock.UnlockDoor.Response) {
         let viewModel = format(response: response)
         viewController?.displayUnlockDoor(viewModel: viewModel)
     }
     
-    // MARK: UnlockDoor Helpers
+    // MARK: - UnlockDoor Helpers
     
     private func format(response: Unlock.UnlockDoor.Response) -> Unlock.UnlockDoor.ViewModel {
         return Unlock.UnlockDoor.ViewModel(state: getState(from: response),
@@ -72,7 +74,7 @@ class UnlockPresenter: UnlockPresentationLogic {
         }
     }
     
-    // MARK: FetchDoors Helpers
+    // MARK: - FetchDoors Helpers
     
     private func format(response: Unlock.FetchDoors.Response) -> Unlock.FetchDoors.ViewModel {
         let items = response.doors?.map({

@@ -27,7 +27,8 @@ class ListInteractor: ListBusinessLogic, ListDataStore {
     var worker: ListWorker? = ListWorker(cloudLockAPI: CloudLockAPI())
     var credentialWorker: CredentialsWorker? = CredentialsWorker(cloudLockAPI: CloudLockAPI())
     var credential: Credential?
-    // MARK: ListBusinessLogic
+    
+    // MARK: - Fetch Items
     
     func fetchItems<T: Item>(type: T.Type, request: List.FetchItems.Request) {
         worker?.fetchItems(row: request.row,
@@ -44,6 +45,8 @@ class ListInteractor: ListBusinessLogic, ListDataStore {
             }
         })
     }
+    
+    // MARK: - Fetch Credentials
     
     func fetchCredentials<T: Item>(type: T.Type, request: List.FetchItemCredentials.Request) {
         credentialWorker?.fetchItemCredentials(id: request.id,
