@@ -80,3 +80,6 @@ iOSInjectionProject/
 
 # R.swift
 **/R.generated.swift
+
+# Bundler gems
+vendor/
