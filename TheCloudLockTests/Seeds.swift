@@ -15,5 +15,11 @@ struct Seeds {
         static let hallway = Doors(id: "0", name: "Living Room", image: "livingroom")
     }
     
+    struct Model {
+        static let sam = DisplayedItem(id: "0", name: "Sam")
+        static let happy = DisplayedItem(id: "2", name: "Mr. Happy")
+        static let office = DisplayedItem(id: "1", name: "Office")
+        static let hallway = DisplayedCredentialItem(name: "Hallway", active: false)
+        static let room = DisplayedCredentialItem(name: "Room", active: true)
     }
 }
