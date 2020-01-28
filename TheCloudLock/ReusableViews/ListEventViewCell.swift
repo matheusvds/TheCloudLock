@@ -26,7 +26,6 @@ class ListEventViewCell: UITableViewCell {
     func setupAppearance() {
         textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         detailTextLabel?.font = UIFont.systemFont(ofSize: 10, weight: .light)
-        detailTextLabel?.textColor = .black
         textLabel?.numberOfLines = 0
         textLabel?.adjustsFontSizeToFitWidth = true
         selectionStyle = .none

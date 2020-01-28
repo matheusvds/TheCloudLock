@@ -15,7 +15,6 @@ class CustomLoadingView: View {
     lazy var centerText: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
         return label

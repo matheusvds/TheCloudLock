@@ -21,7 +21,6 @@ class DoorView: View {
     lazy var doorName: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
         return label

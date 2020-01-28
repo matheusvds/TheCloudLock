@@ -17,7 +17,6 @@ class ResultView: View {
         let label = UILabel()
         label.text = R.string.localizable.unlockedFree()
         label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
