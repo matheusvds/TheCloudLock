@@ -86,4 +86,4 @@ vendor/
 
 # Jazzy
 .build/
-docs/
+documentation/
