@@ -30,6 +30,12 @@ Add line below to your ~/.bash_profile
 eval "$(rbenv init -)"
 ```
 
+Installs the ruby version defined in .ruby-version (it may take some time)
+
+```
+rbenv install 2.5.3
+```
+
 Get Bundler
 
 ```
