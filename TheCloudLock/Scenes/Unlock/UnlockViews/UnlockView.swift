@@ -80,8 +80,6 @@ class UnlockView: ScreenView {
     }
     
     override func addAdditionalConfiguration() {
-        backgroundColor = .clear
-        scrollView.backgroundColor = .white
-        container.backgroundColor = .white
+        backgroundColor = .systemGray6
     }
 }

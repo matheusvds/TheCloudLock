@@ -45,25 +45,33 @@ class RootRouter {
     
     private func instanceUnlockNavigation() -> UINavigationController {
         let unlockVC = UnlockController()
-        unlockVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        unlockVC.tabBarItem = UITabBarItem(title: "Unlock",
+                                           image: R.image.locker(),
+                                           tag: 0)
         return BaseNavigationController(rootViewController: unlockVC)
     }
     
     private func instanceDoorNavigation() -> UINavigationController {
         let unlockVC = ListController<Doors>()
-        unlockVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        unlockVC.tabBarItem = UITabBarItem(title: "Doors",
+                                           image: R.image.door(),
+                                           tag: 1)
         return BaseNavigationController(rootViewController: unlockVC)
     }
     
     private func instanceUsersNavigation() -> UINavigationController {
         let unlockVC = ListController<Users>()
-        unlockVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        unlockVC.tabBarItem = UITabBarItem(title: "Users",
+                                           image: R.image.user(),
+                                           tag: 2)
         return BaseNavigationController(rootViewController: unlockVC)
     }
     
     private func instanceEventNavigation() -> UINavigationController {
         let unlockVC = ListController<Events>()
-        unlockVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        unlockVC.tabBarItem = UITabBarItem(title: "Events",
+                                           image: R.image.event(),
+                                           tag: 3)
         return BaseNavigationController(rootViewController: unlockVC)
     }
     
