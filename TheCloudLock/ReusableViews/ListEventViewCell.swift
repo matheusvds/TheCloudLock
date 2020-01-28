@@ -11,7 +11,7 @@ import UIKit
 class ListEventViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
@@ -25,6 +25,8 @@ class ListEventViewCell: UITableViewCell {
     
     func setupAppearance() {
         textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        detailTextLabel?.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        detailTextLabel?.textColor = .black
         textLabel?.numberOfLines = 0
         textLabel?.adjustsFontSizeToFitWidth = true
         selectionStyle = .none

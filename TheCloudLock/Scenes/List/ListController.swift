@@ -124,8 +124,9 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: T.entityName,
                                                  for: indexPath)
-        
-        cell.textLabel?.text = items[indexPath.row].name
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.name
+         cell.detailTextLabel?.text = item.detail
         
         return cell
     }

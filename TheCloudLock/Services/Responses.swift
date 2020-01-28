@@ -294,15 +294,18 @@ struct Responses: ResponsesMock {
     [
        {
           "id":"0",
-          "name":"🔓 Sam unlocked Hallway 1h ago"
+          "name":"🔓 Sam unlocked Hallway",
+          "detail": "1h ago"
        },
        {
           "id":"1",
-          "name": "🔒 Suzzy locked the Office door 2 days ago"
+          "name": "🔒 Suzzy locked the Office door",
+          "detail": "2 days ago"
        },
        {
           "id":"2",
-          "name": "🔑 Mr. Bob gave Sam access to Hallway just now"
+          "name": "🔑 Mr. Bob gave Sam access to Hallway",
+          "detail": "just now"
        }
     ]
     """

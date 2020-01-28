@@ -38,7 +38,7 @@ class ListPresenter: ListPresentationLogic {
     
     private func format(response: List.FetchItems.Response) -> List.FetchItems.ViewModel {
         return List.FetchItems.ViewModel(
-            items: response.items.map({ DisplayedItem(id: $0.id, name: $0.name) }),
+            items: response.items.map({ DisplayedItem(id: $0.id, name: $0.name, detail: $0.detail) }),
             resultMessage: getErrorMessage(from: response.error)
         )
     }

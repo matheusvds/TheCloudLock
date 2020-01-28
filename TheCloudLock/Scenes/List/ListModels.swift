@@ -31,6 +31,7 @@ enum List {
             struct DisplayedItem: Item {
                 var id: String
                 var name: String
+                var detail: String?
             }
         }
     }

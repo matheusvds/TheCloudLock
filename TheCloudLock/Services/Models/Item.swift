@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias Item = Codable & Itemable & Namable & Selectable & Editable & AssociatedCellType & LargePresentable
+typealias Item = Codable & Itemable & Namable & Selectable & Editable & AssociatedCellType & LargePresentable & Detailable
 
 // MARK: - Itemable
 
@@ -74,5 +74,17 @@ protocol LargePresentable {
 extension LargePresentable {
     static var large: Bool {
         return true
+    }
+}
+
+// MARK: - Detailable
+
+protocol Detailable {
+    var detail: String? { get }
+}
+
+extension Detailable {
+    var detail: String? {
+        return nil
     }
 }
