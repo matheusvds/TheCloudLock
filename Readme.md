@@ -9,7 +9,25 @@ Supports: iOS 10.x and above
 
 ## Dependencies:
 
-The project is using cocoapods for managing external libraries and a Gemfile for managing the cocoapods version.
+The project is using cocoapods for managing external libraries and a Gemfile for managing the cocoapods version. Before downloading the gems, it is recommended that you install rbenv.
+
+Get Rbenv
+
+```
+brew install rbenv
+```
+
+Setup Rbenv
+
+```
+rbenv init
+```
+
+Add line below to your ~/.bash_profile
+
+```
+eval "$(rbenv init -)"
+```
 
 Get Bundler
 
@@ -17,7 +35,7 @@ Get Bundler
 sudo gem install bundler
 ```
 
-To install the specific cocoapods version run
+To install gem dependencies run
 
 ```
 bundle install
