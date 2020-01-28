@@ -70,6 +70,8 @@
 		2F2482A023D8FBB40043F5EE /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24829F23D8FBB40043F5EE /* Identifiable.swift */; };
 		2F2482A623D9ECEC0043F5EE /* CloudLockResult+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2482A523D9ECEC0043F5EE /* CloudLockResult+.swift */; };
 		2F2482A823D9EFB40043F5EE /* UnlockViewEventsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2482A723D9EFB40043F5EE /* UnlockViewEventsLogic.swift */; };
+		2FB1745523DFB7BE001519BA /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1745423DFB7BE001519BA /* Events.swift */; };
+		2FB1745823DFC812001519BA /* ListEventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB1745723DFC812001519BA /* ListEventViewCell.swift */; };
 		2FBFB99023D9FFFD0015AF42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB98F23D9FFFD0015AF42 /* Status.swift */; };
 		2FBFB99323DA10150015AF42 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99223DA10150015AF42 /* ResultView.swift */; };
 		2FBFB99623DA410F0015AF42 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFB99523DA410F0015AF42 /* ErrorView.swift */; };
@@ -171,6 +173,8 @@
 		2F24829F23D8FBB40043F5EE /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		2F2482A523D9ECEC0043F5EE /* CloudLockResult+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudLockResult+.swift"; sourceTree = "<group>"; };
 		2F2482A723D9EFB40043F5EE /* UnlockViewEventsLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewEventsLogic.swift; sourceTree = "<group>"; };
+		2FB1745423DFB7BE001519BA /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		2FB1745723DFC812001519BA /* ListEventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventViewCell.swift; sourceTree = "<group>"; };
 		2FBFB98F23D9FFFD0015AF42 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		2FBFB99223DA10150015AF42 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		2FBFB99523DA410F0015AF42 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 		2F15FBFB23DE0F72000F5184 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				2FB1745723DFC812001519BA /* ListEventViewCell.swift */,
 				2FBFB9C623DCFACE0015AF42 /* ListTableViewCell.swift */,
 				2FBFB9C023DCB55D0015AF42 /* ListTableView.swift */,
 				2F24827F23D518A60043F5EE /* CustomLoadingView.swift */,
@@ -522,9 +527,10 @@
 		2F24829523D8B3020043F5EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2FB1745423DFB7BE001519BA /* Events.swift */,
 				2F24829623D8B3140043F5EE /* Doors.swift */,
-				2FBFB98F23D9FFFD0015AF42 /* Status.swift */,
 				2FBFB9C423DCF8870015AF42 /* Users.swift */,
+				2FBFB98F23D9FFFD0015AF42 /* Status.swift */,
 				2FBFB9BE23DCB0030015AF42 /* Item.swift */,
 				2F15FBEB23DDF27A000F5184 /* Credential.swift */,
 			);
@@ -639,7 +645,7 @@
 				2A1E77431F384BFD006C84D4 /* Sources */,
 				2A1E77441F384BFD006C84D4 /* Frameworks */,
 				2A1E77451F384BFD006C84D4 /* Resources */,
-				F5B2F6B16C1679F3A4C49C9A /* [CP] Embed Pods Frameworks */,
+				09F3D4D84C80A6C54E0A9D8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -712,6 +718,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09F3D4D84C80A6C54E0A9D8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		553FC23A2140470C001D9362 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,7 +752,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				"$SRCROOT/TheCloudLock/Resources/Generated/R.generated.swift",
+				$SRCROOT/TheCloudLock/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -792,30 +822,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F5B2F6B16C1679F3A4C49C9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheCloudLockTests/Pods-TheCloudLockTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FC9CA61F1F83C1B700B8EB94 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,6 +860,7 @@
 				2FBFB9B123DB87420015AF42 /* ListRouter.swift in Sources */,
 				2F15FC3B23DF5FC6000F5184 /* CloudlockResult.swift in Sources */,
 				2F15FBF323DE066F000F5184 /* DetailPresenter.swift in Sources */,
+				2FB1745823DFC812001519BA /* ListEventViewCell.swift in Sources */,
 				2F15FC3723DF4F7A000F5184 /* UnlockRouter.swift in Sources */,
 				2FBFB9C123DCB55D0015AF42 /* ListTableView.swift in Sources */,
 				2F15FBE723DD36E3000F5184 /* UIViewController+.swift in Sources */,
@@ -862,6 +869,7 @@
 				2A1E77371F384BFC006C84D4 /* AppDelegate.swift in Sources */,
 				2F24829723D8B3140043F5EE /* Doors.swift in Sources */,
 				2F24828023D518A60043F5EE /* CustomLoadingView.swift in Sources */,
+				2FB1745523DFB7BE001519BA /* Events.swift in Sources */,
 				2FBFB99823DA70F30015AF42 /* StateTableViewController.swift in Sources */,
 				2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */,
 				2F24827323D3F4EC0043F5EE /* BaseView.swift in Sources */,

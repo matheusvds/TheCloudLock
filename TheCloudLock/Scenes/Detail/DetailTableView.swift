@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTableView: ListTableView {
+class DetailTableView<T: Item>: ListTableView<T> {
     override func setupCells() {
         register(DetailCell.self, forCellReuseIdentifier: DetailCell.reuseIdentifier)
     }

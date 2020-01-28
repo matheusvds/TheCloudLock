@@ -23,6 +23,7 @@ class CloudLockAPI: CloudLockProtocol {
     static var saveDoorCredentialsJSON: String? = Responses.saveDoorCrendentialsResponse
     static var fetchUserCredentialsJSON: String? = Responses.fetchUserCredentialsResponse
     static var fetchDoorCredentialsJSON: String? = Responses.fetchDoorCredentialsResponse
+    static var fetchEventsJSON: String? = Responses.fetchEventsResponse
     static var fetchUsersJSON: String? = Responses.fetchUsersResponse
     static var fetchDoorsJSON: String? = Responses.fetchDoorsResponse
     static var unlockDoorJSON: String? = Responses.unlockDoorResponse(code: 200)

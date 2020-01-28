@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListTableView: UITableView {
+class ListTableView<T: Item>: UITableView {
         
     fileprivate lazy var emptyView: UILabel = {
         let emptyView = UILabel()
@@ -49,15 +49,15 @@ class ListTableView: UITableView {
     }
     
     private func setupAppereance() {
-        separatorStyle = .none
+        separatorStyle = .none 
     }
     
     func setupCellHeight() {
-        self.rowHeight = UIScreen.main.bounds.height / 5
+        self.rowHeight = UIScreen.main.bounds.height / (T.large ? 5 : 8)
     }
     
     func setupCells() {
-        register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
+        register(T.cellType, forCellReuseIdentifier: T.entityName)
     }
     
     private func addEmptyState() {
@@ -81,5 +81,3 @@ class ListTableView: UITableView {
         }
     }
 }
-
-extension UITableViewCell: Identifiable { }

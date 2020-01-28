@@ -30,6 +30,8 @@ enum State: String {
     case saveUserCredentialsError = "Save User Credentials Error"
     case saveDoorCredentialsSuccess = "Save Door Credentials Success"
     case saveDoorCredentialsError = "Save Door Credentials Error"
+    case listEventsSuccess = "List Events Success"
+
 }
 
 class StateTableViewController: UITableViewController {
@@ -53,9 +55,9 @@ class StateTableViewController: UITableViewController {
         [
             "fetchDoors",
             "unlockDoor",
-            "List (common states)",
             "Doors",
             "Users",
+            "Events",
             "Save Credentials"
     ]
     
@@ -65,32 +67,33 @@ class StateTableViewController: UITableViewController {
             .fetchSuccess,
             .fetchError
         ],
-        
         [
             .unlockSuccess,
             .unlockError,
             .unlockPermissionError
         ],
-        
-        [
-            .listError,
-            .listEmpty
-        ],
-        
         [
             .listDoorsSuccess,
+            .listEmpty,
+            .listError,
             .removeDoorSuccess,
             .fetchDoorCredetialsSuccess,
             .fetchDoorCredentalsError,
             .fetchDoorCredentialsEmpty
         ],
-        
         [
             .listUsersSuccess,
+            .listEmpty,
+            .listError,
             .removeUserSuccess,
             .fetchUserCredetialsSuccess,
             .fetchUserCredentalsError,
             .fetchUserCredentialsEmpty
+        ],
+        [
+            .listEventsSuccess,
+            .listEmpty,
+            .listError
         ],
         [
             .saveUserCredentialsSuccess,
@@ -160,7 +163,10 @@ class StateTableViewController: UITableViewController {
         
         case .removeUserSuccess:
             response.fetchItemsRemoveUsersSuccess()
-            
+        
+        case .listEventsSuccess:
+            response.fetchItemsEventsSuccess()
+
             // MARK: - List
             
         case .listError:
@@ -198,6 +204,7 @@ class StateTableViewController: UITableViewController {
             
         case .saveDoorCredentialsError:
             response.saveDoorCredentialsError()
+            
         }
         
         dismiss(animated: true, completion: nil)

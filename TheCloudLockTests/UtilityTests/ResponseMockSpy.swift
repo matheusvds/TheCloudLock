@@ -11,6 +11,8 @@ import XCTest
 
 struct ResponseMockSpy: ResponsesMock {
     
+    static var fetchItemsEventsSuccessCalled = false
+    static var fetchItemsEventsErrorCalled = false
     static var fetchSuccessCalled = false
     static var fetchErrorCalled = false
     static var unlockErrorCalled = false
@@ -51,6 +53,14 @@ struct ResponseMockSpy: ResponsesMock {
     
     static func unlockPermissionError() {
         unlockPermissionErrorCalled = true
+    }
+    
+    static func fetchItemsEventsSuccess() {
+        fetchItemsEventsSuccessCalled = true
+    }
+    
+    static func fetchItemsEventsError() {
+        fetchItemsEventsErrorCalled = true
     }
     
     static func fetchItemsUsersSuccess() {

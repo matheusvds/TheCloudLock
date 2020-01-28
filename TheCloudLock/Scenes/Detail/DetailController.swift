@@ -31,7 +31,7 @@ class DetailController<T: Item>: Controller, DetailDisplayLogic, UITableViewDele
 
     // MARK: - Views
     
-    let tableView: DetailTableView = DetailTableView()
+    let tableView: DetailTableView = DetailTableView<T>()
     
     override func loadView() {
         self.view = tableView

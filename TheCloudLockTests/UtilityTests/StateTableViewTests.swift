@@ -83,7 +83,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 2))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 2, section: 2))
 
         XCTAssert(spy.fetchItemsErrorCalled)
     }
@@ -101,7 +101,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 3))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 2))
 
         XCTAssert(spy.fetchItemsDoorsSuccessCalled)
     }
@@ -110,7 +110,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 1, section: 3))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 3, section: 2))
 
         XCTAssert(spy.fetchItemsRemoveDoorsSuccessCalled)
     }
@@ -119,7 +119,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 2, section: 3))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 4, section: 2))
 
         XCTAssert(spy.fetchDoorsCredentialsSuccessCalled)
     }
@@ -128,7 +128,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 3, section: 3))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 5, section: 2))
 
         XCTAssert(spy.fetchDoorsCredentialsErrorCalled)
     }
@@ -137,7 +137,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 4, section: 3))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 6, section: 2))
 
         XCTAssert(spy.fetchDoorsCredentialsEmptyCalled)
     }
@@ -146,7 +146,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 4))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 3))
 
         XCTAssert(spy.fetchItemsUsersSuccessCalled)
     }
@@ -155,7 +155,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 1, section: 4))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 3, section: 3))
 
         XCTAssert(spy.fetchItemsRemoveUsersSuccessCalled)
     }
@@ -164,7 +164,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 2, section: 4))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 4, section: 3))
 
         XCTAssert(spy.fetchUserCredentialsSuccessCalled)
     }
@@ -173,7 +173,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 3, section: 4))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 5, section: 3))
 
         XCTAssert(spy.fetchUserCredentialsErrorCalled)
     }
@@ -182,7 +182,7 @@ class StateTableViewTests: XCTestCase {
         let spy = ResponseMockSpy.self
         sut.response = spy
         
-        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 4, section: 4))
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 6, section: 3))
 
         XCTAssert(spy.fetchUserCredentialsEmptyCalled)
     }

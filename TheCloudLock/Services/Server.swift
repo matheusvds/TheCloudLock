@@ -49,6 +49,8 @@ class FakeServer: Server {
             CloudLockAPI.fetchItemsJSON = CloudLockAPI.fetchUsersJSON
             CloudLockAPI.fetchItemsCredentialsJSON = CloudLockAPI.fetchUserCredentialsJSON
             CloudLockAPI.saveItemsCredentialsJSON = CloudLockAPI.saveUserCredentialsJSON
+        case let name where name.contains("event"):
+            CloudLockAPI.fetchItemsJSON = CloudLockAPI.fetchEventsJSON
         default:
             FakeServer.json = nil
         }

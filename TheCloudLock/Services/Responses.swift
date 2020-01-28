@@ -26,6 +26,9 @@ protocol ResponsesMock {
     /// Sets API to unlock door with permission error response
     static func unlockPermissionError()
     
+    /// Sets API to fetch event items with success response
+    static func fetchItemsEventsSuccess()
+
     /// Sets API to fetch user items with success response
     static func fetchItemsUsersSuccess()
     
@@ -67,7 +70,7 @@ protocol ResponsesMock {
     
     /// Sets API to save door credentials with error response
     static func saveDoorCredentialsError()
-    
+        
     /// Sets API to fetch items with error response
     static func fetchItemsError()
     
@@ -101,6 +104,12 @@ struct Responses: ResponsesMock {
     }
     
     // MARK: - List Scene
+    
+        // MARK: - Events
+    
+    static func fetchItemsEventsSuccess() {
+        CloudLockAPI.fetchEventsJSON = Responses.fetchEventsResponse
+    }
     
         // MARK: - Users
     
@@ -165,22 +174,24 @@ struct Responses: ResponsesMock {
     }
     
     static func saveDoorCredentialsSuccess() {
-        CloudLockAPI.saveUserCredentialsJSON = Responses.saveDoorCrendentialsResponse
+        CloudLockAPI.saveDoorCredentialsJSON = Responses.saveDoorCrendentialsResponse
     }
     
     static func saveDoorCredentialsError() {
-        CloudLockAPI.saveUserCredentialsJSON = Responses.saveDoorCredentialsResponseError
+        CloudLockAPI.saveDoorCredentialsJSON = Responses.saveDoorCredentialsResponseError
     }
 
     // MARK: - Error and Empty States
     static func fetchItemsError() {
         CloudLockAPI.fetchUsersJSON = .none
         CloudLockAPI.fetchDoorsJSON = .none
+        CloudLockAPI.fetchEventsJSON = .none
     }
     
     static func fetchItemsEmptyState() {
         CloudLockAPI.fetchUsersJSON = Responses.emptyListResponse
         CloudLockAPI.fetchDoorsJSON = Responses.emptyListResponse
+        CloudLockAPI.fetchEventsJSON = Responses.emptyListResponse
     }
     
     // MARK: - Status
@@ -272,6 +283,26 @@ struct Responses: ResponsesMock {
           "id":"3",
           "name":"Second Floor",
           "image":"secfloor"
+       }
+    ]
+    """
+    
+    // MARK: - Fetch Events
+    
+    static let fetchEventsResponse =
+    """
+    [
+       {
+          "id":"0",
+          "name":"🔓 Sam unlocked Hallway 1h ago"
+       },
+       {
+          "id":"1",
+          "name": "🔒 Suzzy locked the Office door 2 days ago"
+       },
+       {
+          "id":"2",
+          "name": "🔑 Mr. Bob gave Sam access to Hallway just now"
        }
     ]
     """

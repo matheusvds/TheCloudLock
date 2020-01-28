@@ -26,7 +26,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     
     // MARK: - Views
 
-    let tableView = ListTableView()
+    let tableView = ListTableView<T>()
     private let refreshControl = UIRefreshControl()
     
     // MARK: - Data
@@ -74,6 +74,9 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     }
     
     private func setAddItemButton() {
+        guard T.editable else {
+            return
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addItem))
@@ -119,7 +122,7 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: T.entityName,
                                                  for: indexPath)
         
         cell.textLabel?.text = items[indexPath.row].name
@@ -136,10 +139,13 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return T.editable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard T.selectable else {
+            return
+        }
         getCredentials(at: indexPath.row)
     }
     
