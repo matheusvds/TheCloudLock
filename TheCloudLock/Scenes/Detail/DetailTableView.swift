@@ -22,5 +22,6 @@ class DetailCell: ListTableViewCell {
     override func setupAppearance() {
         textLabel?.font = UIFont.systemFont(ofSize: 25, weight: .medium)
         selectionStyle = .none
+        accessoryView = UIImageView(image: R.image.selected())
     }
 }

@@ -27,8 +27,8 @@ class ResultView: View {
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.commonBack(), for: .normal)
-        button.setTitleColor(.darkPurple, for: .highlighted)
-        button.backgroundColor = .lightPurple
+        button.setTitleColor(.systemBlue, for: .highlighted)
+        button.backgroundColor = .systemPurple
         button.layer.cornerRadius = 18
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowRadius = 10

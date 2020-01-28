@@ -59,7 +59,6 @@
 		2F24827E23D518810043F5EE /* DoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827D23D518810043F5EE /* DoorView.swift */; };
 		2F24828023D518A60043F5EE /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24827F23D518A60043F5EE /* CustomLoadingView.swift */; };
 		2F24828223D518E50043F5EE /* UnlockViewStateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */; };
-		2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828323D52C8D0043F5EE /* UIColor+.swift */; };
 		2F24828C23D7522E0043F5EE /* UnlockViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */; };
 		2F24828D23D7522E0043F5EE /* UnlockInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */; };
 		2F24828E23D7522E0043F5EE /* DoorsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24828A23D7522E0043F5EE /* DoorsWorkerTests.swift */; };
@@ -162,7 +161,6 @@
 		2F24827D23D518810043F5EE /* DoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorView.swift; sourceTree = "<group>"; };
 		2F24827F23D518A60043F5EE /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		2F24828123D518E50043F5EE /* UnlockViewStateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewStateLogic.swift; sourceTree = "<group>"; };
-		2F24828323D52C8D0043F5EE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		2F24828823D7522E0043F5EE /* UnlockViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewControllerTests.swift; sourceTree = "<group>"; };
 		2F24828923D7522E0043F5EE /* UnlockInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockInteractorTests.swift; sourceTree = "<group>"; };
 		2F24828A23D7522E0043F5EE /* DoorsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWorkerTests.swift; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 		2AB31DA41F38745300B7D1F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2F24828323D52C8D0043F5EE /* UIColor+.swift */,
 				2F15FBE623DD36E3000F5184 /* UIViewController+.swift */,
 			);
 			path = Extensions;
@@ -884,7 +881,6 @@
 				2F24826F23D3E15A0043F5EE /* UnlockView.swift in Sources */,
 				553FC23C214047CB001D9362 /* R.generated.swift in Sources */,
 				2F24826A23D3DD4A0043F5EE /* UnlockInteractor.swift in Sources */,
-				2F24828423D52C8D0043F5EE /* UIColor+.swift in Sources */,
 				2F15FBF623DE066F000F5184 /* DetailModels.swift in Sources */,
 				2F15FBEC23DDF27A000F5184 /* Credential.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,

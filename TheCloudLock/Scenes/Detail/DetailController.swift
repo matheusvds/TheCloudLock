@@ -96,13 +96,13 @@ class DetailController<T: Item>: Controller, DetailDisplayLogic, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.reuseIdentifier, for: indexPath)
         let item = items[indexPath.row]
         cell.textLabel?.text = item.name
-        cell.accessoryType = .checkmark
+
         setAcessory(cell: cell, for: item.active)
         return cell
     }
     
     private func setAcessory(cell: UITableViewCell, for state: Bool) {
-        cell.tintColor = state ? .green : .gray
+        cell.tintColor = state ? .systemGreen : .systemGray
     }
     
     // MARK: - UITableViewDelegate

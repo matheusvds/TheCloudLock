@@ -30,8 +30,8 @@ class DoorView: View {
     lazy var unlockButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.letsUnlockIt(), for: .normal)
-        button.setTitleColor(.darkPurple, for: .highlighted)
-        button.backgroundColor = .lightPurple
+        button.setTitleColor(.systemBlue, for: .highlighted)
+        button.backgroundColor = .systemPurple
         button.layer.cornerRadius = 18
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowRadius = 10
@@ -43,7 +43,7 @@ class DoorView: View {
     override public func draw(_ rect: CGRect) {
         let gradient = CAGradientLayer()
         gradient.frame = doorImage.bounds
-        gradient.colors = [UIColor.darkPurple.cgColor, UIColor.lightPurple.cgColor]
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
         gradient.startPoint = CGPoint(x: 1, y: 0)
         gradient.endPoint = CGPoint(x: 0.2, y: 1)
         gradient.cornerRadius = 10

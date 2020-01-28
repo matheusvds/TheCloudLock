@@ -9,5 +9,8 @@
 import UIKit
 
 class BaseTabbarController: UITabBarController {
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBar.tintColor = .systemPink
+    }
 }
