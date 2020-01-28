@@ -1,6 +1,7 @@
 # TheCloudLock
 
 Supports: iOS 10.x and above
+Xcode: 11.2.1
 
 ## Branches:
 
