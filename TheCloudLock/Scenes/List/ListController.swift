@@ -159,7 +159,6 @@ class ListController<T: Item>: Controller, UITableViewDataSource, UITableViewDel
         
         alert.addTextField { textField in
             textField.becomeFirstResponder()
-            textField.textColor = .black
             textField.placeholder = R.string.localizable.typeNameHere()
             textField.backgroundColor = nil
             textField.keyboardAppearance = .default

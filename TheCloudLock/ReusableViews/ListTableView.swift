@@ -13,7 +13,6 @@ class ListTableView<T: Item>: UITableView {
     fileprivate lazy var emptyView: UILabel = {
         let emptyView = UILabel()
         emptyView.translatesAutoresizingMaskIntoConstraints = false
-        emptyView.textColor = UIColor.black
         emptyView.font = UIFont.boldSystemFont(ofSize: 30)
         emptyView.isHidden = true
         return emptyView
